@@ -10,6 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 import SwiftyJSON
+import Alamofire
 
 class APIManager {
     static var Base_Url_Account = "http://khacchung98.somee.com/"
@@ -18,20 +19,8 @@ class APIManager {
     typealias parameters = [String:Any]
     
     enum ApiResult {
-        case success(JSON)
+        case success(JSON?, JSON?)
         case failure(RequestError)
-    }
-    
-    enum HTTPMethod: String {
-        case options = "OPTIONS"
-        case get     = "GET"
-        case head    = "HEAD"
-        case post    = "POST"
-        case put     = "PUT"
-        case patch   = "PATCH"
-        case delete  = "DELETE"
-        case trace   = "TRACE"
-        case connect = "CONNECT"
     }
     
     enum RequestError: Error {
@@ -46,55 +35,39 @@ class APIManager {
     }
     
     static func requestData(url:String, isLogin:Bool, method:HTTPMethod, parameters:parameters?, completion: @escaping (ApiResult)->Void) {
-        
         var header = ["":""];
         if(isLogin){
             header = ["Content-Type": "application/x-www-form-urlencoded"]
         }else{
-            header = ["Content-Type": "application/json"]
+            header = ["Content-Type": "application/x-www-form-urlencoded"]
         }
         var myUrl = ""
         if(isLogin){
-            myUrl = Base_Url
+            myUrl = Base_Url + url
         }else{
-            myUrl = Base_Url_Account
+            myUrl = Base_Url_Account + url
         }
         
-        var urlRequest = URLRequest(url: URL(string: myUrl)!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
-        urlRequest.allHTTPHeaderFields = header
-        urlRequest.httpMethod = method.rawValue
-        if let parameters = parameters {
-            let parameterData = parameters.reduce("") { (result, param) -> String in
-                return result + "&\(param.key)=\(param.value as! String)"
-                }.data(using: .utf8)
-            urlRequest.httpBody = parameterData
-        }
-        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
-            if let error = error {
-                print(error)
-                completion(ApiResult.failure(.connectionError))
-            }else if let data = data ,let responseCode = response as? HTTPURLResponse {
-                do {
-                    let responseJson = try JSON(data: data, options: .allowFragments)
-                    print("responseCode : \(responseCode.statusCode)")
-                    print("responseJSON : \(responseJson)")
-                    switch responseCode.statusCode {
+        Alamofire.request(myUrl, method: method, parameters: parameters, encoding: URLEncoding.httpBody, headers: header)
+                 .validate(contentType: ["application/json"])
+                 .responseJSON { response in
+                    let headersResponse = response.response?.allHeaderFields as? [String: String]
+                    print("header result: \(String(describing: headersResponse)))")
+                    print("respone result: \(String(describing: response.result.value))")
+                    print("error result: \(String(describing: response.result.error))")
+                    let statusCode = (response.response?.statusCode)!
+                    
+                    switch statusCode{
                     case 200:
-                        completion(ApiResult.success(responseJson))
+                        completion(ApiResult.success(JSON(headersResponse!), response.result.value != nil ? JSON(response.result.value!) : JSON()))
                     case 400...499:
-                        completion(ApiResult.failure(.authorizationError(responseJson)))
+                        completion(ApiResult.failure(.authorizationError(response.result.value != nil ? JSON(response.result.value!) : JSON())))
                     case 500...599:
                         completion(ApiResult.failure(.serverError))
                     default:
                         completion(ApiResult.failure(.unknownError))
                         break
                     }
-                }
-                catch let parseJSONError {
-                    completion(ApiResult.failure(.unknownError))
-                    print("error on parsing request to JSON : \(parseJSONError)")
-                }
-            }
-            }.resume()
+        }
     }
 }

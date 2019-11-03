@@ -25,6 +25,15 @@ class UserRegisterModel {
         self.Password = pass
         self.ConfirmPassword = confirmPass
     }
+    
+    
+    func toJson() -> [String:Any] {
+        var para: [String:Any] = [:]
+        para["Email"] = Email
+        para["Password"] = Password
+        para["ConfirmPassword"] = ConfirmPassword
+        return para
+    }
 }
 
 class UserLoginModel {

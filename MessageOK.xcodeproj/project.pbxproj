@@ -15,9 +15,13 @@
 		8748EF89235C76300001D89F /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8748EF88235C76300001D89F /* LoginController.swift */; };
 		87C0E4902365EE7900B22A78 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C0E48F2365EE7900B22A78 /* LoginViewModel.swift */; };
 		87C0E4922365F0D500B22A78 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C0E4912365F0D500B22A78 /* Network.swift */; };
+		87D54770236EB8BB0088AC83 /* InformationStartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D5476F236EB8BB0088AC83 /* InformationStartController.swift */; };
+		87D54772236EB8EE0088AC83 /* InformationStartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D54771236EB8EE0088AC83 /* InformationStartViewModel.swift */; };
+		87D54774236EB9410088AC83 /* InformationUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D54773236EB9410088AC83 /* InformationUser.swift */; };
 		87DDFD1C2362D0F600B3C2FB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DDFD1B2362D0F600B3C2FB /* Extensions.swift */; };
 		87DDFD1E2362DA4400B3C2FB /* IconTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DDFD1D2362DA4400B3C2FB /* IconTextField.swift */; };
 		87DDFD2B2362DE3C00B3C2FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DDFD2A2362DE3C00B3C2FB /* AppDelegate.swift */; };
+		87F513C9236BB6B9009A8857 /* MyUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F513C8236BB6B9009A8857 /* MyUserDefault.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,9 +34,13 @@
 		8748EF88235C76300001D89F /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		87C0E48F2365EE7900B22A78 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		87C0E4912365F0D500B22A78 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		87D5476F236EB8BB0088AC83 /* InformationStartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationStartController.swift; sourceTree = "<group>"; };
+		87D54771236EB8EE0088AC83 /* InformationStartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationStartViewModel.swift; sourceTree = "<group>"; };
+		87D54773236EB9410088AC83 /* InformationUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationUser.swift; sourceTree = "<group>"; };
 		87DDFD1B2362D0F600B3C2FB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		87DDFD1D2362DA4400B3C2FB /* IconTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextField.swift; sourceTree = "<group>"; };
 		87DDFD2A2362DE3C00B3C2FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		87F513C8236BB6B9009A8857 /* MyUserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUserDefault.swift; sourceTree = "<group>"; };
 		A0A8D27E4A2AE11B20826AC0 /* Pods-MessageOK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageOK.release.xcconfig"; path = "Target Support Files/Pods-MessageOK/Pods-MessageOK.release.xcconfig"; sourceTree = "<group>"; };
 		D8031197FD19BF9AA70A0FF1 /* Pods-MessageOK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageOK.debug.xcconfig"; path = "Target Support Files/Pods-MessageOK/Pods-MessageOK.debug.xcconfig"; sourceTree = "<group>"; };
 		EBB79571AE3B388B11F4B945 /* Pods_MessageOK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MessageOK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +102,7 @@
 		8748EF77235C637E0001D89F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				87D5476D236EB8940088AC83 /* InformationStart */,
 				8748EF7A235C63AD0001D89F /* Login */,
 			);
 			path = View;
@@ -102,6 +111,7 @@
 		8748EF78235C638C0001D89F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				87D5476C236EB86A0088AC83 /* InformationStart */,
 				87C0E4932365F45C00B22A78 /* Login */,
 			);
 			path = ViewModel;
@@ -110,6 +120,7 @@
 		8748EF79235C639B0001D89F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				87D5476E236EB89E0088AC83 /* Information */,
 				8748EF81235C6D580001D89F /* Login */,
 			);
 			path = Model;
@@ -145,6 +156,7 @@
 		8748EF86235C73570001D89F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				87F513C8236BB6B9009A8857 /* MyUserDefault.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -165,6 +177,30 @@
 				87C0E48F2365EE7900B22A78 /* LoginViewModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		87D5476C236EB86A0088AC83 /* InformationStart */ = {
+			isa = PBXGroup;
+			children = (
+				87D54771236EB8EE0088AC83 /* InformationStartViewModel.swift */,
+			);
+			path = InformationStart;
+			sourceTree = "<group>";
+		};
+		87D5476D236EB8940088AC83 /* InformationStart */ = {
+			isa = PBXGroup;
+			children = (
+				87D5476F236EB8BB0088AC83 /* InformationStartController.swift */,
+			);
+			path = InformationStart;
+			sourceTree = "<group>";
+		};
+		87D5476E236EB89E0088AC83 /* Information */ = {
+			isa = PBXGroup;
+			children = (
+				87D54773236EB9410088AC83 /* InformationUser.swift */,
+			);
+			path = Information;
 			sourceTree = "<group>";
 		};
 		B4FCBFCAAFEF45A325532045 /* Frameworks */ = {
@@ -290,8 +326,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87F513C9236BB6B9009A8857 /* MyUserDefault.swift in Sources */,
 				87DDFD2B2362DE3C00B3C2FB /* AppDelegate.swift in Sources */,
+				87D54770236EB8BB0088AC83 /* InformationStartController.swift in Sources */,
 				8748EF89235C76300001D89F /* LoginController.swift in Sources */,
+				87D54772236EB8EE0088AC83 /* InformationStartViewModel.swift in Sources */,
+				87D54774236EB9410088AC83 /* InformationUser.swift in Sources */,
 				87C0E4902365EE7900B22A78 /* LoginViewModel.swift in Sources */,
 				87DDFD1E2362DA4400B3C2FB /* IconTextField.swift in Sources */,
 				8748EF83235C6D710001D89F /* UserLoginModel.swift in Sources */,
