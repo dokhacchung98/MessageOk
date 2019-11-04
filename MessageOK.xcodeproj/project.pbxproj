@@ -13,11 +13,16 @@
 		8748EF70235C47240001D89F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8748EF6E235C47240001D89F /* LaunchScreen.storyboard */; };
 		8748EF83235C6D710001D89F /* UserLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8748EF82235C6D710001D89F /* UserLoginModel.swift */; };
 		8748EF89235C76300001D89F /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8748EF88235C76300001D89F /* LoginController.swift */; };
+		877D24ED236F2027006FB3E3 /* MyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877D24EC236F2027006FB3E3 /* MyExtensions.swift */; };
+		877D24EF236F32F4006FB3E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 877D24EE236F32F4006FB3E3 /* GoogleService-Info.plist */; };
 		87C0E4902365EE7900B22A78 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C0E48F2365EE7900B22A78 /* LoginViewModel.swift */; };
 		87C0E4922365F0D500B22A78 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C0E4912365F0D500B22A78 /* Network.swift */; };
 		87D54770236EB8BB0088AC83 /* InformationStartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D5476F236EB8BB0088AC83 /* InformationStartController.swift */; };
 		87D54772236EB8EE0088AC83 /* InformationStartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D54771236EB8EE0088AC83 /* InformationStartViewModel.swift */; };
 		87D54774236EB9410088AC83 /* InformationUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D54773236EB9410088AC83 /* InformationUser.swift */; };
+		87D54779236EC19B0088AC83 /* ChooseDate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87D54778236EC19B0088AC83 /* ChooseDate.storyboard */; };
+		87D5477B236EC2090088AC83 /* ChooseDateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D5477A236EC2090088AC83 /* ChooseDateController.swift */; };
+		87D5477E236EC5A10088AC83 /* AlertChooseDateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D5477D236EC5A10088AC83 /* AlertChooseDateService.swift */; };
 		87DDFD1C2362D0F600B3C2FB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DDFD1B2362D0F600B3C2FB /* Extensions.swift */; };
 		87DDFD1E2362DA4400B3C2FB /* IconTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DDFD1D2362DA4400B3C2FB /* IconTextField.swift */; };
 		87DDFD2B2362DE3C00B3C2FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DDFD2A2362DE3C00B3C2FB /* AppDelegate.swift */; };
@@ -32,11 +37,16 @@
 		8748EF71235C47240001D89F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8748EF82235C6D710001D89F /* UserLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginModel.swift; sourceTree = "<group>"; };
 		8748EF88235C76300001D89F /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		877D24EC236F2027006FB3E3 /* MyExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExtensions.swift; sourceTree = "<group>"; };
+		877D24EE236F32F4006FB3E3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		87C0E48F2365EE7900B22A78 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		87C0E4912365F0D500B22A78 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		87D5476F236EB8BB0088AC83 /* InformationStartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationStartController.swift; sourceTree = "<group>"; };
 		87D54771236EB8EE0088AC83 /* InformationStartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationStartViewModel.swift; sourceTree = "<group>"; };
 		87D54773236EB9410088AC83 /* InformationUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationUser.swift; sourceTree = "<group>"; };
+		87D54778236EC19B0088AC83 /* ChooseDate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChooseDate.storyboard; sourceTree = "<group>"; };
+		87D5477A236EC2090088AC83 /* ChooseDateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDateController.swift; sourceTree = "<group>"; };
+		87D5477D236EC5A10088AC83 /* AlertChooseDateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertChooseDateService.swift; sourceTree = "<group>"; };
 		87DDFD1B2362D0F600B3C2FB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		87DDFD1D2362DA4400B3C2FB /* IconTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextField.swift; sourceTree = "<group>"; };
 		87DDFD2A2362DE3C00B3C2FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +98,7 @@
 		8748EF64235C47230001D89F /* MessageOK */ = {
 			isa = PBXGroup;
 			children = (
+				87B3624A236FD86E00A89BC2 /* Services */,
 				8748EF86235C73570001D89F /* Extensions */,
 				8748EF87235C73860001D89F /* Helper */,
 				8748EF79235C639B0001D89F /* Model */,
@@ -102,6 +113,7 @@
 		8748EF77235C637E0001D89F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				87D54776236EC1670088AC83 /* OrtherFunction */,
 				87D5476D236EB8940088AC83 /* InformationStart */,
 				8748EF7A235C63AD0001D89F /* Login */,
 			);
@@ -139,6 +151,7 @@
 			children = (
 				8748EF69235C47230001D89F /* Main.storyboard */,
 				8748EF6E235C47240001D89F /* LaunchScreen.storyboard */,
+				877D24EE236F32F4006FB3E3 /* GoogleService-Info.plist */,
 				8748EF71235C47240001D89F /* Info.plist */,
 				8748EF6C235C47240001D89F /* Assets.xcassets */,
 			);
@@ -157,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				87F513C8236BB6B9009A8857 /* MyUserDefault.swift */,
+				877D24EC236F2027006FB3E3 /* MyExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -169,6 +183,14 @@
 				87C0E4912365F0D500B22A78 /* Network.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		87B3624A236FD86E00A89BC2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				87D5477D236EC5A10088AC83 /* AlertChooseDateService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		87C0E4932365F45C00B22A78 /* Login */ = {
@@ -201,6 +223,23 @@
 				87D54773236EB9410088AC83 /* InformationUser.swift */,
 			);
 			path = Information;
+			sourceTree = "<group>";
+		};
+		87D54776236EC1670088AC83 /* OrtherFunction */ = {
+			isa = PBXGroup;
+			children = (
+				87D54777236EC17E0088AC83 /* ChooseDate */,
+			);
+			path = OrtherFunction;
+			sourceTree = "<group>";
+		};
+		87D54777236EC17E0088AC83 /* ChooseDate */ = {
+			isa = PBXGroup;
+			children = (
+				87D54778236EC19B0088AC83 /* ChooseDate.storyboard */,
+				87D5477A236EC2090088AC83 /* ChooseDateController.swift */,
+			);
+			path = ChooseDate;
 			sourceTree = "<group>";
 		};
 		B4FCBFCAAFEF45A325532045 /* Frameworks */ = {
@@ -273,7 +312,9 @@
 			files = (
 				8748EF70235C47240001D89F /* LaunchScreen.storyboard in Resources */,
 				8748EF6D235C47240001D89F /* Assets.xcassets in Resources */,
+				877D24EF236F32F4006FB3E3 /* GoogleService-Info.plist in Resources */,
 				8748EF6B235C47230001D89F /* Main.storyboard in Resources */,
+				87D54779236EC19B0088AC83 /* ChooseDate.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +367,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87D5477E236EC5A10088AC83 /* AlertChooseDateService.swift in Sources */,
+				87D5477B236EC2090088AC83 /* ChooseDateController.swift in Sources */,
 				87F513C9236BB6B9009A8857 /* MyUserDefault.swift in Sources */,
 				87DDFD2B2362DE3C00B3C2FB /* AppDelegate.swift in Sources */,
 				87D54770236EB8BB0088AC83 /* InformationStartController.swift in Sources */,
@@ -336,6 +379,7 @@
 				87DDFD1E2362DA4400B3C2FB /* IconTextField.swift in Sources */,
 				8748EF83235C6D710001D89F /* UserLoginModel.swift in Sources */,
 				87C0E4922365F0D500B22A78 /* Network.swift in Sources */,
+				877D24ED236F2027006FB3E3 /* MyExtensions.swift in Sources */,
 				87DDFD1C2362D0F600B3C2FB /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -86,16 +86,3 @@ class LoginResultModel{
     init() {
     }
 }
-
-//extension LoginResultModel{
-//    init(json: [String: Any]){
-//        let userName = json["userName"] as? String
-//        let access = json["access_token"] as? String
-//        let expires = json["expires_in"] as? Int64
-//        let tokenType = json["token_type"] as? String
-//        self.access_token = access
-//        self.token_type = tokenType
-//        self.expires_in = expires
-//        self.userName = userName
-//    }
-//}

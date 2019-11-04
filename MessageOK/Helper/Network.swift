@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import SwiftyJSON
 import Alamofire
+import FirebaseStorage
 
 class APIManager {
     static var Base_Url_Account = "http://khacchung98.somee.com/"
@@ -37,7 +38,10 @@ class APIManager {
     static func requestData(url:String, isLogin:Bool, method:HTTPMethod, parameters:parameters?, completion: @escaping (ApiResult)->Void) {
         var header = ["":""];
         if(isLogin){
-            header = ["Content-Type": "application/x-www-form-urlencoded"]
+            let typeToken = MyUserDefault.instance.getObject(key: .TokenType) as! String
+            let token = MyUserDefault.instance.getObject(key: .Token) as! String
+            header = ["Content-Type": "application/x-www-form-urlencoded", "Authorization": "\(String(describing: typeToken)) \(String(describing: token))"]
+            print("Header: \(header)")
         }else{
             header = ["Content-Type": "application/x-www-form-urlencoded"]
         }
@@ -48,7 +52,7 @@ class APIManager {
             myUrl = Base_Url_Account + url
         }
         
-        Alamofire.request(myUrl, method: method, parameters: parameters, encoding: URLEncoding.httpBody, headers: header)
+        Alamofire.request(myUrl, method: method, parameters: parameters, encoding: method == HTTPMethod.get ? URLEncoding.queryString : URLEncoding.httpBody, headers: header)
                  .validate(contentType: ["application/json"])
                  .responseJSON { response in
                     let headersResponse = response.response?.allHeaderFields as? [String: String]
@@ -68,6 +72,24 @@ class APIManager {
                         completion(ApiResult.failure(.unknownError))
                         break
                     }
+        }
+    }
+    
+    static func uploadImage(_ image:UIImage, _ nameImage: String, completion: @escaping ((_ url: URL?)->())){
+        let storageRef = Storage.storage().reference().child(nameImage + ".png")
+        let imageData = image.pngData()
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/png"
+        storageRef.putData(imageData!, metadata: metaData){ (metadata, err) in
+            if err == nil{
+                print("Upload image success")
+                storageRef.downloadURL(completion: { (url, err) in
+                    completion(url)
+                })
+            }else{
+                completion(nil)
+                print("Upload image error : \(String(describing: err))")
+            }
         }
     }
 }

@@ -6,4 +6,8 @@ target 'MessageOK' do
   pod 'RxCocoa'
   pod 'SwiftyJSON'
   pod 'Alamofire'
+  pod 'FirebaseCore'
+  pod 'FirebaseDatabase'
+  pod 'FirebaseStorage'
+  pod 'Firebase/Analytics'
 end
