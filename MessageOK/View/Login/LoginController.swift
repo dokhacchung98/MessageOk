@@ -12,6 +12,12 @@ import RxSwift
 
 class LoginController: UIViewController {
     
+    static func startPresent(uiViewController:UIViewController) {
+        if let presentController = uiViewController.storyboard?.instantiateViewController(withIdentifier: "Login") as? LoginController {
+            uiViewController.present(presentController, animated: true, completion: nil)
+        }
+    }
+    
     @IBOutlet weak var txtEmail: CustomTextFieldICon!
     @IBOutlet weak var txtPassword: CustomTextFieldICon!
     @IBOutlet weak var btnLogin: UIButton!

@@ -20,6 +20,12 @@ class InformationStartController: UIViewController, UIImagePickerControllerDeleg
     @IBOutlet weak var viewBoundTop: UIView!
     @IBOutlet weak var btnUpdate: UIButton!
     
+    static func startPresent(uiViewController:UIViewController) {
+        if let presentController = uiViewController.storyboard?.instantiateViewController(withIdentifier: "updateInformationStart") as? InformationStartController {
+            uiViewController.present(presentController, animated: true, completion: nil)
+        }
+    }
+    
     private let alertChooseDate = AlertChooseDateService()
     
     private let pickerImage = UIImagePickerController()
@@ -62,7 +68,16 @@ class InformationStartController: UIViewController, UIImagePickerControllerDeleg
                 let myStringafd = formatter.string(from: yourDate!)
                 return myStringafd
             }.bind(to: self.txtBirth.rx.text)
+        _ = self.informationViewModel.isUpdateSuccess.asObservable().bind{ isSuccess in
+            if isSuccess {
+                
+            }
+        }
    }
+    
+    private func gotoHome() {
+        
+    }
     
     @IBAction func chooseDate(_ sender: Any) {
         let alertVC = alertChooseDate.alert(){ date in

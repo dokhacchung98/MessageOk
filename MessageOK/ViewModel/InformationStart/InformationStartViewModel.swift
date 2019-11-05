@@ -12,7 +12,7 @@ import RxSwift
 import UIKit
 
 class InformationStartViewModel {
-    var userId = BehaviorRelay<String>(value: "0a9f23de-e89f-48c0-a7dc-945e128df6c3")
+    var userId = BehaviorRelay<String>(value: "")
     var name = BehaviorRelay<String>(value: "")
     var birth = BehaviorRelay<Date>(value: Date())
     var phone = BehaviorRelay<String>(value: "")
@@ -30,7 +30,8 @@ class InformationStartViewModel {
         self.imageView = imageView
         self.buttonUpdate = buttonUpdate
 
-        let userId = MyUserDefault.instance.getObject(key: .UserId) as! String
+        let userId = MyUserDefault.instance.getObject(key: .UserId) as? String ?? ""
+        print("Get User Id: \(userId)")
         self.userId.accept(userId)
         
         _ = self.buttonUpdate.bind{ _ in

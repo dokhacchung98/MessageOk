@@ -64,7 +64,6 @@ class LoginViewModel{
             return passc.count >= 6
         }
         
-        print("value valid register \(email),  \(pass),  \(passConfirm)")
         return Observable.combineLatest(email, pass, passConfirm, isLoading.asObservable().map({ t in
             return t
         })) { $0 && $1 && $2 && !$3}

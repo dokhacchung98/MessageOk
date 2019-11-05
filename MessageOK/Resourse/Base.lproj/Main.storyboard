@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Med-Ix-AfO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dRc-1w-wu5">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,37 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Splash Screen Controller-->
+        <scene sceneID="pMF-AX-DNl">
+            <objects>
+                <viewController storyboardIdentifier="splashScreen" id="dRc-1w-wu5" customClass="SplashScreenController" customModule="MessageOK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6qj-7q-f0x">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Kj1-yE-a8s">
+                                <rect key="frame" x="52" y="348" width="310" height="200"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Xcp-Zf-TSj">
+                                <rect key="frame" x="197" y="562" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97679919000000004" green="0.3493226223" blue="0.1016817314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LSM-H9-e1u" firstAttribute="bottom" secondItem="Xcp-Zf-TSj" secondAttribute="bottom" constant="280" id="D3X-20-AeX"/>
+                            <constraint firstItem="LSM-H9-e1u" firstAttribute="trailing" secondItem="Kj1-yE-a8s" secondAttribute="trailing" constant="52" id="JKy-8B-caX"/>
+                            <constraint firstItem="Kj1-yE-a8s" firstAttribute="centerX" secondItem="6qj-7q-f0x" secondAttribute="centerX" id="Opu-hM-I4O"/>
+                            <constraint firstItem="Kj1-yE-a8s" firstAttribute="leading" secondItem="LSM-H9-e1u" secondAttribute="leading" constant="52" id="ZpF-de-dRW"/>
+                            <constraint firstItem="Xcp-Zf-TSj" firstAttribute="centerX" secondItem="6qj-7q-f0x" secondAttribute="centerX" id="ecK-eg-iQQ"/>
+                            <constraint firstItem="Kj1-yE-a8s" firstAttribute="centerY" secondItem="6qj-7q-f0x" secondAttribute="centerY" id="sXM-SY-Zqt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LSM-H9-e1u"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t9g-BR-G4g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-803" y="21"/>
+        </scene>
         <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -219,7 +250,7 @@
         <!--Information Start Controller-->
         <scene sceneID="IpD-eJ-BQW">
             <objects>
-                <viewController id="Med-Ix-AfO" customClass="InformationStartController" customModule="MessageOK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="updateInformationStart" id="Med-Ix-AfO" customClass="InformationStartController" customModule="MessageOK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pzy-iy-Osm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -382,6 +413,7 @@
     <resources>
         <image name="botbanner" width="680" height="410"/>
         <image name="default_user" width="331" height="323"/>
+        <image name="logo" width="200" height="200"/>
         <image name="topbanner" width="680" height="410"/>
     </resources>
 </document>
