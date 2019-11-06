@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		45FC6BF870CCE70916807970 /* Pods_MessageOK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB79571AE3B388B11F4B945 /* Pods_MessageOK.framework */; };
+		874320AC2372B98000D62559 /* MyTabBarControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874320AB2372B98000D62559 /* MyTabBarControllerViewController.swift */; };
 		8748EF6B235C47230001D89F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8748EF69235C47230001D89F /* Main.storyboard */; };
 		8748EF6D235C47240001D89F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8748EF6C235C47240001D89F /* Assets.xcassets */; };
 		8748EF70235C47240001D89F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8748EF6E235C47240001D89F /* LaunchScreen.storyboard */; };
@@ -26,12 +27,17 @@
 		87DDFD1C2362D0F600B3C2FB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DDFD1B2362D0F600B3C2FB /* Extensions.swift */; };
 		87DDFD1E2362DA4400B3C2FB /* IconTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DDFD1D2362DA4400B3C2FB /* IconTextField.swift */; };
 		87DDFD2B2362DE3C00B3C2FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DDFD2A2362DE3C00B3C2FB /* AppDelegate.swift */; };
+		87F3D5342371BF1B00064285 /* ChatFriendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F3D5332371BF1B00064285 /* ChatFriendController.swift */; };
+		87F3D5362371BF2A00064285 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F3D5352371BF2A00064285 /* SettingController.swift */; };
+		87F3D5382371BF3700064285 /* RequestFriendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F3D5372371BF3700064285 /* RequestFriendController.swift */; };
+		87F3D53A2371BF4E00064285 /* ChatGroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F3D5392371BF4E00064285 /* ChatGroupController.swift */; };
 		87F513C9236BB6B9009A8857 /* MyUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F513C8236BB6B9009A8857 /* MyUserDefault.swift */; };
 		87FD4D4823707952001E7A53 /* SplashScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FD4D4723707952001E7A53 /* SplashScreenController.swift */; };
 		87FD4D4B23707C20001E7A53 /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FD4D4A23707C20001E7A53 /* SplashScreenViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		874320AB2372B98000D62559 /* MyTabBarControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarControllerViewController.swift; sourceTree = "<group>"; };
 		8748EF62235C47230001D89F /* MessageOK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessageOK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8748EF6A235C47230001D89F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8748EF6C235C47240001D89F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,6 +58,10 @@
 		87DDFD1B2362D0F600B3C2FB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		87DDFD1D2362DA4400B3C2FB /* IconTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextField.swift; sourceTree = "<group>"; };
 		87DDFD2A2362DE3C00B3C2FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		87F3D5332371BF1B00064285 /* ChatFriendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFriendController.swift; sourceTree = "<group>"; };
+		87F3D5352371BF2A00064285 /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
+		87F3D5372371BF3700064285 /* RequestFriendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFriendController.swift; sourceTree = "<group>"; };
+		87F3D5392371BF4E00064285 /* ChatGroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGroupController.swift; sourceTree = "<group>"; };
 		87F513C8236BB6B9009A8857 /* MyUserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUserDefault.swift; sourceTree = "<group>"; };
 		87FD4D4723707952001E7A53 /* SplashScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenController.swift; sourceTree = "<group>"; };
 		87FD4D4A23707C20001E7A53 /* SplashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModel.swift; sourceTree = "<group>"; };
@@ -79,6 +89,14 @@
 				A0A8D27E4A2AE11B20826AC0 /* Pods-MessageOK.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		874320AA2372B94C00D62559 /* MyTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				874320AB2372B98000D62559 /* MyTabBarControllerViewController.swift */,
+			);
+			path = MyTabBar;
 			sourceTree = "<group>";
 		};
 		8748EF59235C47230001D89F = {
@@ -117,6 +135,11 @@
 		8748EF77235C637E0001D89F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				874320AA2372B94C00D62559 /* MyTabBar */,
+				87F3D52E2371BED200064285 /* Setting */,
+				87F3D52D2371BEC900064285 /* RequestFriend */,
+				87F3D52C2371BEC200064285 /* ChatGroup */,
+				87F3D52B2371BE7A00064285 /* ChatFriend */,
 				87FD4D462370792D001E7A53 /* SplashScreen */,
 				87D54776236EC1670088AC83 /* OrtherFunction */,
 				87D5476D236EB8940088AC83 /* InformationStart */,
@@ -128,6 +151,10 @@
 		8748EF78235C638C0001D89F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				87F3D5322371BF0600064285 /* ChatFriend */,
+				87F3D5312371BEFF00064285 /* ChatGroup */,
+				87F3D5302371BEF800064285 /* RequestFriend */,
+				87F3D52F2371BEF300064285 /* Setting */,
 				87FD4D4923707C0D001E7A53 /* SplashScreen */,
 				87D5476C236EB86A0088AC83 /* InformationStart */,
 				87C0E4932365F45C00B22A78 /* Login */,
@@ -246,6 +273,66 @@
 				87D5477A236EC2090088AC83 /* ChooseDateController.swift */,
 			);
 			path = ChooseDate;
+			sourceTree = "<group>";
+		};
+		87F3D52B2371BE7A00064285 /* ChatFriend */ = {
+			isa = PBXGroup;
+			children = (
+				87F3D5332371BF1B00064285 /* ChatFriendController.swift */,
+			);
+			path = ChatFriend;
+			sourceTree = "<group>";
+		};
+		87F3D52C2371BEC200064285 /* ChatGroup */ = {
+			isa = PBXGroup;
+			children = (
+				87F3D5392371BF4E00064285 /* ChatGroupController.swift */,
+			);
+			path = ChatGroup;
+			sourceTree = "<group>";
+		};
+		87F3D52D2371BEC900064285 /* RequestFriend */ = {
+			isa = PBXGroup;
+			children = (
+				87F3D5372371BF3700064285 /* RequestFriendController.swift */,
+			);
+			path = RequestFriend;
+			sourceTree = "<group>";
+		};
+		87F3D52E2371BED200064285 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				87F3D5352371BF2A00064285 /* SettingController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		87F3D52F2371BEF300064285 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		87F3D5302371BEF800064285 /* RequestFriend */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RequestFriend;
+			sourceTree = "<group>";
+		};
+		87F3D5312371BEFF00064285 /* ChatGroup */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ChatGroup;
+			sourceTree = "<group>";
+		};
+		87F3D5322371BF0600064285 /* ChatFriend */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ChatFriend;
 			sourceTree = "<group>";
 		};
 		87FD4D462370792D001E7A53 /* SplashScreen */ = {
@@ -389,17 +476,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87F3D5362371BF2A00064285 /* SettingController.swift in Sources */,
+				87F3D53A2371BF4E00064285 /* ChatGroupController.swift in Sources */,
 				87D5477E236EC5A10088AC83 /* AlertChooseDateService.swift in Sources */,
 				87D5477B236EC2090088AC83 /* ChooseDateController.swift in Sources */,
 				87F513C9236BB6B9009A8857 /* MyUserDefault.swift in Sources */,
 				87DDFD2B2362DE3C00B3C2FB /* AppDelegate.swift in Sources */,
+				874320AC2372B98000D62559 /* MyTabBarControllerViewController.swift in Sources */,
 				87D54770236EB8BB0088AC83 /* InformationStartController.swift in Sources */,
+				87F3D5342371BF1B00064285 /* ChatFriendController.swift in Sources */,
 				8748EF89235C76300001D89F /* LoginController.swift in Sources */,
 				87D54772236EB8EE0088AC83 /* InformationStartViewModel.swift in Sources */,
 				87D54774236EB9410088AC83 /* InformationUser.swift in Sources */,
 				87C0E4902365EE7900B22A78 /* LoginViewModel.swift in Sources */,
 				87FD4D4823707952001E7A53 /* SplashScreenController.swift in Sources */,
 				87DDFD1E2362DA4400B3C2FB /* IconTextField.swift in Sources */,
+				87F3D5382371BF3700064285 /* RequestFriendController.swift in Sources */,
 				8748EF83235C6D710001D89F /* UserLoginModel.swift in Sources */,
 				87C0E4922365F0D500B22A78 /* Network.swift in Sources */,
 				87FD4D4B23707C20001E7A53 /* SplashScreenViewModel.swift in Sources */,

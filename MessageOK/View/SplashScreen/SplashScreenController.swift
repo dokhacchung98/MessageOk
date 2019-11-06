@@ -18,7 +18,7 @@ class SplashScreenController: UIViewController {
         super.viewDidLoad()
         self.splashScreeenViewModel = SplashScreenViewModel()
         
-        self.timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: { _ in
+        self.timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { _ in
             self.timer.invalidate()
             self.splashScreeenViewModel.isCountDownFinish.accept(true)
         })
@@ -44,7 +44,7 @@ class SplashScreenController: UIViewController {
     
     private func gotoHome(){
         self.dismiss(animated: true, completion: nil)
-        InformationStartController.startPresent(uiViewController: self)
+        MyTabBarControllerViewController.startPresent(uiViewController: self)
     }
     
     private func gotoLogin(){

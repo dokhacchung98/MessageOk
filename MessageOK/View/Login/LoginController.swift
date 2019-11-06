@@ -58,9 +58,18 @@ class LoginController: UIViewController {
         
         loginViewModel = LoginViewModel(tapLogin: self.btnLogin.rx.tap.asObservable(), tapRegister: self.btnRequestRegister.rx.tap.asObservable())
         
-        _ = self.loginViewModel.isLoginSuccessful.bind{ isSuccess in
-            if(isSuccess){
-                
+        _ = self.loginViewModel.isLoginSuccessful.bind{ type in
+            switch type {
+            case .success:
+                self.gotoHome()
+                 break
+            case .faild:
+                break
+            case .updateInformation:
+                self.gotoUpdateInformation()
+                break
+            case .none:
+                break
             }
         }
         _ = self.loginViewModel.isRegisterSuccessful.bind{ isSuccess in
@@ -120,5 +129,15 @@ class LoginController: UIViewController {
 
     @IBAction func btnForgotPass(_ sender: Any) {
         
+    }
+    
+    private func gotoHome(){
+        self.dismiss(animated: true, completion: nil)
+        MyTabBarControllerViewController.startPresent(uiViewController: self)
+    }
+    
+    private func gotoUpdateInformation(){
+        self.dismiss(animated: true, completion: nil)
+        InformationStartController.startPresent(uiViewController: self)
     }
 }

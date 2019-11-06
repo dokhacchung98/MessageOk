@@ -68,16 +68,13 @@ class InformationStartController: UIViewController, UIImagePickerControllerDeleg
                 let myStringafd = formatter.string(from: yourDate!)
                 return myStringafd
             }.bind(to: self.txtBirth.rx.text)
+        
         _ = self.informationViewModel.isUpdateSuccess.asObservable().bind{ isSuccess in
             if isSuccess {
-                
+                self.gotoHome()
             }
         }
    }
-    
-    private func gotoHome() {
-        
-    }
     
     @IBAction func chooseDate(_ sender: Any) {
         let alertVC = alertChooseDate.alert(){ date in
@@ -100,5 +97,10 @@ class InformationStartController: UIViewController, UIImagePickerControllerDeleg
             print("Something went wrong")
         }
         dismiss(animated: true, completion: nil)
+    }
+    
+    private func gotoHome(){
+        self.dismiss(animated: true, completion: nil)
+        MyTabBarControllerViewController.startPresent(uiViewController: self)
     }
 }

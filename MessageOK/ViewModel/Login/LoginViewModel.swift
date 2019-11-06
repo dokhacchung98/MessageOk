@@ -34,7 +34,14 @@ class LoginViewModel{
     var tapLogin: Observable<Void>
     var tapRegister: Observable<Void>
     
-    var isLoginSuccessful = BehaviorRelay<Bool>(value: false)
+    enum TypeLogin {
+        case success
+        case faild
+        case updateInformation
+        case none
+    }
+    
+    var isLoginSuccessful = BehaviorRelay<TypeLogin>(value: .none)
     var isRegisterSuccessful = BehaviorRelay<Bool>(value: false)
     
     var isValidInputLogin : Observable<Bool>{
@@ -110,16 +117,37 @@ class LoginViewModel{
                     self.myUserDefault.editObject(value: body!["token_type"].rawValue, key: .TokenType)
                     self.myUserDefault.saveObject(value: body!["userName"].rawValue, key: .UserName)
                     
-                    self.isLoading.accept(false)
-                    self.isLoginSuccessful.accept(true)
-                    self.messageError.accept("")
+                    self.checkInformationUserIsEmpty()
                     break
                 case .failure(let failure) :
                   print("Error \(failure)")
                   self.isLoading.accept(false)
-                  self.isLoginSuccessful.accept(false)
+                  self.isLoginSuccessful.accept(.faild)
                   self.messageError.accept("Error: \(failure)")
             }
         })
+    }
+    
+    private func checkInformationUserIsEmpty(){
+        APIManager.requestData(url: "GetUserLogin", isLogin: true, method: .get, parameters: nil) { result in
+            switch result{
+            case .success(_, let body):
+                let idUserRequest = body!["Id"].rawValue as! String
+                let fullName:String? = body!["FullName"].rawValue as? String ?? ""
+                self.myUserDefault.saveObject(value: idUserRequest, key: .UserId)
+                
+                if fullName != "" {
+                    self.isLoginSuccessful.accept(.success)
+                }else{
+                    self.isLoginSuccessful.accept(.updateInformation)
+                }
+                self.isLoading.accept(false)
+                self.messageError.accept("")
+                break
+            case .failure(_):
+                self.isLoginSuccessful.accept(.faild)
+                break
+            }
+        }
     }
 }
