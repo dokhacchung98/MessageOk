@@ -43,17 +43,14 @@ class SplashScreenController: UIViewController {
     }
     
     private func gotoHome(){
-        self.dismiss(animated: true, completion: nil)
         MyTabBarControllerViewController.startPresent(uiViewController: self)
     }
     
     private func gotoLogin(){
-        self.dismiss(animated: true, completion: nil)
         LoginController.startPresent(uiViewController: self)
     }
     
     private func gotoAddInformationStart(){
-        self.dismiss(animated: true, completion: nil)
         InformationStartController.startPresent(uiViewController: self)
     }
 }

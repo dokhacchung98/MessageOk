@@ -7,8 +7,30 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class RequestFriendController: UIViewController {
+class RequestFriendController: SwipViewController {
+    
+    var requestFriendViewModel:RequestFriendViewModel!
+    @IBOutlet weak var viewUserList: UIView!
+    @IBOutlet weak var viewBoundFR: UIView!
+    @IBOutlet weak var viewFriendRequest: UIView!
+    @IBOutlet weak var constrainHeightFR: NSLayoutConstraint!
+    
+    private lazy var userListTableViewController : UserListTableViewController = {
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        var viewController = storyboard.instantiateViewController(withIdentifier: "UserListTableVC") as! UserListTableViewController
+        self.add(asChildViewController: viewController, to: self.viewUserList)
+        return viewController
+    }()
+    
+    private lazy var friendSentController : FriendSentController = {
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        var viewController = storyboard.instantiateViewController(withIdentifier: "FriendSentVC") as! FriendSentController
+        self.add(asChildViewController: viewController, to: self.viewFriendRequest)
+        return viewController
+    }()
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -18,22 +40,13 @@ class RequestFriendController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let left = UISwipeGestureRecognizer(target: self, action: #selector(swipeLeft))
-        left.direction = .left
-        self.view.addGestureRecognizer(left)
-        
-        let right = UISwipeGestureRecognizer(target: self, action: #selector(swipeRight))
-        right.direction = .right
-        self.view.addGestureRecognizer(right)
-    }
-    
-    @objc func swipeLeft() {
-        let total = self.tabBarController!.viewControllers!.count - 1
-        tabBarController!.selectedIndex = min(total, tabBarController!.selectedIndex + 1)
-        
-    }
-    
-    @objc func swipeRight() {
-        tabBarController!.selectedIndex = max(0, tabBarController!.selectedIndex - 1)
+        self.requestFriendViewModel = RequestFriendViewModel()
+        _ = self.friendSentController.friendSentViewModel.listFR.bind{ value in
+            if value.count <= 0{
+                self.constrainHeightFR.constant = 0
+            }else{
+                self.constrainHeightFR.constant = 292
+            }
+        }
     }
 }

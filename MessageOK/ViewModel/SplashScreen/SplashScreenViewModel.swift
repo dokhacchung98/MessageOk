@@ -24,6 +24,7 @@ class SplashScreenViewModel {
     var isLoadingFinish:Observable<Bool>{
         let isFinishRequest = self.statusAccountLogin.asObservable().map({ value in
             return value != .none })
+        
         return Observable.combineLatest(isFinishRequest, self.isCountDownFinish.asObservable().map({t in
             return t
         })){ $0 && $1 }
@@ -38,7 +39,7 @@ class SplashScreenViewModel {
     
     private func checkIsSaveOldAccount(){
         if let _ = myUserDefault.getObject(key: .Token){
-            APIManager.requestData(url: "GetUserLogin", isLogin: true, method: .get, parameters: nil) { result in
+            APIManager.requestData(url: "api/MyApi/GetUserLogin", isLogin: true, method: .get, parameters: nil) { result in
                 switch result{
                 case .success(_, let body):
                     let idUserRequest = body!["Id"].rawValue as! String

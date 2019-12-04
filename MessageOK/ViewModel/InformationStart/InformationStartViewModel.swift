@@ -17,17 +17,17 @@ class InformationStartViewModel {
     var birth = BehaviorRelay<Date>(value: Date())
     var phone = BehaviorRelay<String>(value: "")
     var address = BehaviorRelay<String>(value: "")
-    var changeAvatar = false
-    var imageView : UIImageView?
-    
+    var imageAvatar : UIImageView?
+    var imageWallpaper : UIImageView?
     var isRequest = BehaviorRelay<Bool>(value: false)
     var error = BehaviorRelay<String>(value: "")
     var isUpdateSuccess = BehaviorRelay<Bool>(value: false)
     
     var buttonUpdate:Observable<Void>
     
-    init(imageView:UIImageView, buttonUpdate: Observable<Void>) {
-        self.imageView = imageView
+    init(imageView:UIImageView, imageWallView:UIImageView, buttonUpdate: Observable<Void>) {
+        self.imageAvatar = imageView
+        self.imageWallpaper = imageWallView
         self.buttonUpdate = buttonUpdate
 
         let userId = MyUserDefault.instance.getObject(key: .UserId) as? String ?? ""
@@ -36,11 +36,7 @@ class InformationStartViewModel {
         
         _ = self.buttonUpdate.bind{ _ in
             self.isRequest.accept(true)
-            if self.changeAvatar {
-                self.uploadImage()
-            }else{
-                self.updateInformation()
-            }
+            self.uploadImage()
         }
     }
     
@@ -66,20 +62,20 @@ class InformationStartViewModel {
     }
     
     private func uploadImage(){
-        APIManager.uploadImage(self.imageView!.image!, self.userId.value) { url in
+        APIManager.uploadImage(self.imageAvatar!.image!, self.userId.value) { url in
             print("Url upload: \(String(describing: url))")
             if let myUrl = url {
                 let para = ["userId":self.userId.value, "pathAvatar":myUrl] as [String : Any]
-                APIManager.requestData(url: "UpdateAvatar", isLogin: true, method: .get, parameters: para, completion: { result in
+                APIManager.requestData(url: "api/MyApi/UpdateAvatar", isLogin: true, method: .get, parameters: para, completion: { result in
                     switch result{
-                        case .success(_, _):
-                            self.updateInformation()
-                            break
+                    case .success(_, _):
+                        self.uploadImageWallpaper()
+                        break
                     case .failure(let error):
-                            self.isRequest.accept(false)
-                            self.error.accept("Error: \(error)")
-                            print("Error update avatar: \(error)")
-                            break
+                        self.isRequest.accept(false)
+                        self.error.accept("Error: \(error)")
+                        print("Error update avatar: \(error)")
+                        break
                     }
                 })
             } else {
@@ -89,9 +85,33 @@ class InformationStartViewModel {
         }
     }
     
+    private func uploadImageWallpaper(){
+        APIManager.uploadImage(self.imageWallpaper!.image!,"wallpaper" + self.userId.value) { url in
+            print("Url upload: \(String(describing: url))")
+            if let myUrl = url {
+                let para = ["userId":self.userId.value, "pathAvatar":myUrl] as [String : Any]
+                APIManager.requestData(url: "api/MyApi/UpdateWallpaper", isLogin: true, method: .get, parameters: para, completion: { result in
+                    switch result{
+                    case .success(_, _):
+                        self.updateInformation()
+                        break
+                    case .failure(let error):
+                        self.isRequest.accept(false)
+                        self.error.accept("Error: \(error)")
+                        print("Error update wallpaper: \(error)")
+                        break
+                    }
+                })
+            } else {
+                self.isRequest.accept(false)
+                self.error.accept("Error: Upload wallpaper faild")
+            }
+        }
+    }
+    
     private func updateInformation(){
         let updateModel = InformationUSer(UserId: self.userId.value, FullName: self.name.value, Address: self.address.value, Phone: self.phone.value, DoB: self.birth.value)
-        APIManager.requestData(url: "UpdateInfomation", isLogin: true, method: .post, parameters: updateModel.toJson()) { (result) in
+        APIManager.requestData(url: "api/MyApi/UpdateInfomation", isLogin: true, method: .post, parameters: updateModel.toJson()) { (result) in
             switch result {
                 case .success(_, _):
                     self.isRequest.accept(false)

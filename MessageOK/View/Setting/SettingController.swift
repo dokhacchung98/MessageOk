@@ -8,7 +8,19 @@
 
 import UIKit
 
-class SettingController: UIViewController {
+class SettingController: SwipViewController {
+    @IBOutlet weak var imgWallpaper: UIImageView!
+    @IBOutlet weak var imgAvatar: UIImageView!
+    @IBOutlet weak var txtName: UILabel!
+    @IBOutlet weak var txtEmail: UILabel!
+    @IBOutlet weak var txtDoB: UILabel!
+    @IBOutlet weak var txtPhone: UILabel!
+    @IBOutlet weak var txtAddress: UILabel!
+    
+    let myUserDefault = MyUserDefault.instance
+    var idUser:String?
+    var settingViewModel:SettingViewModel!
+    var changePassService = ChangePassService()
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -17,23 +29,77 @@ class SettingController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.imgAvatar.makeRounded(width: 4, color: UIColor(rgb: 0xeaeaea).cgColor)
+        self.imgWallpaper.layer.cornerRadius = 10
+        self.loadDataFromLocal()
+        self.settingViewModel = SettingViewModel()
+        
+        _ = settingViewModel.isLogoutSuccess.asObservable().bind{ result in
+            if result {
+                self.myUserDefault.removeObject(key: .Token)
+                self.myUserDefault.removeObject(key: .Avatar)
+                self.myUserDefault.removeObject(key: .BoB)
+                self.myUserDefault.removeObject(key: .Email)
+                self.myUserDefault.removeObject(key: .FullName)
+                self.myUserDefault.removeObject(key: .Phone)
+                self.myUserDefault.removeObject(key: .UserId)
+                self.myUserDefault.removeObject(key: .UserName)
+                self.myUserDefault.removeObject(key: .Wallpaper)
+                LoginController.startPresent(uiViewController: self)
+            }
+        }
+    }
+    
+    private func loadDataFromLocal(){
+        if let fullName = self.myUserDefault.getObject(key: .FullName) {
+            self.txtName.text = (fullName as! String)
+        }
+        if let email = self.myUserDefault.getObject(key: .Email) {
+            self.txtEmail.text = (email as! String)
+        }
+        if let phone = self.myUserDefault.getObject(key: .Phone) {
+            self.txtPhone.text = (phone as! String)
+        }
+        if let address = self.myUserDefault.getObject(key: .Address) {
+            self.txtAddress.text = (address as! String)
+        }
+        if let dob = self.myUserDefault.getObject(key: .BoB) {
+            self.txtDoB.text = (dob as! String)
+        }
+        if let avatar = self.myUserDefault.getObject(key: .Avatar) {
+            self.imgAvatar.loadImageFromUrl(urlString: avatar as! String)
+        }
+        if let wall = self.myUserDefault.getObject(key: .Wallpaper) {
+            self.imgWallpaper.loadImageFromUrl(urlString: wall as! String)
+        }
+        
+    }
+    
+    private func loadDataOnline(){
+        
+    }
+    
+    @IBAction func logoutUser(_ sender: Any) {
+        let alert = UIAlertController(title: "Alert?", message: "Do you want to logout.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
+            self.logout()
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true)
+    }
+    
+    @IBAction func showFormChange(_ sender: Any) {
+        let alertVC = self.changePassService.alert()
+        self.tabBarController!.present(alertVC, animated: true, completion: nil)
+//        present(alertVC, animated: true, completion: nil)
+    }
 
-        let left = UISwipeGestureRecognizer(target: self, action: #selector(swipeLeft))
-        left.direction = .left
-        self.view.addGestureRecognizer(left)
-        
-        let right = UISwipeGestureRecognizer(target: self, action: #selector(swipeRight))
-        right.direction = .right
-        self.view.addGestureRecognizer(right)
+    @IBAction func gotoChangeInformation(_ sender: Any) {
     }
     
-    @objc func swipeLeft() {
-        let total = self.tabBarController!.viewControllers!.count - 1
-        tabBarController!.selectedIndex = min(total, tabBarController!.selectedIndex + 1)
-        
-    }
-    
-    @objc func swipeRight() {
-        tabBarController!.selectedIndex = max(0, tabBarController!.selectedIndex - 1)
+    private func logout(){
+        self.settingViewModel.logoutAccount()
     }
 }

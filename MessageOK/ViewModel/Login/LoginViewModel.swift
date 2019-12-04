@@ -116,7 +116,6 @@ class LoginViewModel{
                     self.myUserDefault.saveObject(value: body!["access_token"].rawValue, key: .Token)
                     self.myUserDefault.editObject(value: body!["token_type"].rawValue, key: .TokenType)
                     self.myUserDefault.saveObject(value: body!["userName"].rawValue, key: .UserName)
-                    
                     self.checkInformationUserIsEmpty()
                     break
                 case .failure(let failure) :
@@ -129,7 +128,7 @@ class LoginViewModel{
     }
     
     private func checkInformationUserIsEmpty(){
-        APIManager.requestData(url: "GetUserLogin", isLogin: true, method: .get, parameters: nil) { result in
+        APIManager.requestData(url: "api/MyApi/GetUserLogin", isLogin: true, method: .get, parameters: nil) { result in
             switch result{
             case .success(_, let body):
                 let idUserRequest = body!["Id"].rawValue as! String
@@ -137,6 +136,13 @@ class LoginViewModel{
                 self.myUserDefault.saveObject(value: idUserRequest, key: .UserId)
                 
                 if fullName != "" {
+                    self.myUserDefault.saveObject(value: body!["Email"].rawValue, key: .Email)
+                    self.myUserDefault.saveObject(value: body!["Avatar"].rawValue, key: .Avatar)
+                    self.myUserDefault.saveObject(value: body!["FullName"].rawValue, key: .FullName)
+                    self.myUserDefault.saveObject(value: body!["DoB"].rawValue, key: .BoB)
+                    self.myUserDefault.saveObject(value: body!["Address"].rawValue, key: .Address)
+                    self.myUserDefault.saveObject(value: body?["Wallpaper"].rawValue ?? "", key: .Wallpaper)
+                    self.myUserDefault.saveObject(value: body!["Phone"].rawValue, key: .Phone)
                     self.isLoginSuccessful.accept(.success)
                 }else{
                     self.isLoginSuccessful.accept(.updateInformation)

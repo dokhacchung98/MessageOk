@@ -14,7 +14,7 @@ class LoginController: UIViewController {
     
     static func startPresent(uiViewController:UIViewController) {
         if let presentController = uiViewController.storyboard?.instantiateViewController(withIdentifier: "Login") as? LoginController {
-            uiViewController.present(presentController, animated: true, completion: nil)
+            uiViewController.show(presentController, sender: nil)
         }
     }
     
@@ -132,12 +132,10 @@ class LoginController: UIViewController {
     }
     
     private func gotoHome(){
-        self.dismiss(animated: true, completion: nil)
         MyTabBarControllerViewController.startPresent(uiViewController: self)
     }
-    
+        
     private func gotoUpdateInformation(){
-        self.dismiss(animated: true, completion: nil)
         InformationStartController.startPresent(uiViewController: self)
     }
 }

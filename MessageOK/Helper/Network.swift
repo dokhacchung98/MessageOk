@@ -14,9 +14,9 @@ import Alamofire
 import FirebaseStorage
 
 class APIManager {
-    static var Base_Url_Account = "http://khacchung98.somee.com/"
-    static var Base_Url = "http://khacchung98.somee.com/api/MyApi/"
-    
+    static var Base_Url = "http://khacchung98.somee.com/"
+//    static var Base_Url = "http://khacchung98-001-site1.itempurl.com/"
+
     typealias parameters = [String:Any]
     
     enum ApiResult {
@@ -45,13 +45,8 @@ class APIManager {
         }else{
             header = ["Content-Type": "application/x-www-form-urlencoded"]
         }
-        var myUrl = ""
-        if(isLogin){
-            myUrl = Base_Url + url
-        }else{
-            myUrl = Base_Url_Account + url
-        }
-        
+        let myUrl = Base_Url + url
+
         Alamofire.request(myUrl, method: method, parameters: parameters, encoding: method == HTTPMethod.get ? URLEncoding.queryString : URLEncoding.httpBody, headers: header)
                  .validate(contentType: ["application/json"])
                  .responseJSON { response in

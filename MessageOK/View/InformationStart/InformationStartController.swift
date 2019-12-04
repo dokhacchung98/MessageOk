@@ -16,13 +16,16 @@ class InformationStartController: UIViewController, UIImagePickerControllerDeleg
     @IBOutlet weak var txtPhone: UITextField!
     @IBOutlet weak var txtAddress: UITextField!
     @IBOutlet weak var imgThumbnail: UIImageView!
+    @IBOutlet weak var imgWallPaper: UIImageView!
     @IBOutlet weak var viewBoundImage: UIView!
     @IBOutlet weak var viewBoundTop: UIView!
     @IBOutlet weak var btnUpdate: UIButton!
+    var pickAvatar = false
+    var pickWallPaper = false
     
     static func startPresent(uiViewController:UIViewController) {
         if let presentController = uiViewController.storyboard?.instantiateViewController(withIdentifier: "updateInformationStart") as? InformationStartController {
-            uiViewController.present(presentController, animated: true, completion: nil)
+            uiViewController.show(presentController, sender: nil)
         }
     }
     
@@ -35,7 +38,6 @@ class InformationStartController: UIViewController, UIImagePickerControllerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.viewBoundImage.makeRounded(width: 4, color: UIColor(rgb: 0xeaeaea).cgColor)
         self.viewBoundTop.layer.cornerRadius = 10
         self.btnUpdate.layer.cornerRadius = 5
@@ -45,6 +47,7 @@ class InformationStartController: UIViewController, UIImagePickerControllerDeleg
     
     private func setupViewModel(){
         self.informationViewModel = InformationStartViewModel(imageView: self.imgThumbnail,
+        imageWallView: self.imgWallPaper,
         buttonUpdate: self.btnUpdate.rx.tap.asObservable())
         
         _ = self.informationViewModel.isValid.bind{ valid in
@@ -84,6 +87,14 @@ class InformationStartController: UIViewController, UIImagePickerControllerDeleg
     }
     
     @IBAction func actionPickImage(_ sender: Any) {
+        pickAvatar = true
+        pickerImage.delegate = self
+        pickerImage.sourceType = UIImagePickerController.SourceType.savedPhotosAlbum
+        present(pickerImage, animated: true, completion: nil)
+    }
+    
+    @IBAction func pickWallPaper(_ sender: Any) {
+        pickWallPaper = true
         pickerImage.delegate = self
         pickerImage.sourceType = UIImagePickerController.SourceType.savedPhotosAlbum
         present(pickerImage, animated: true, completion: nil)
@@ -91,8 +102,13 @@ class InformationStartController: UIViewController, UIImagePickerControllerDeleg
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            imgThumbnail.image = image
-            self.informationViewModel.changeAvatar = true
+            if( pickAvatar){
+                imgThumbnail.image = image
+            } else {
+                imgWallPaper.image = image
+            }
+            pickAvatar = false
+            pickWallPaper = false
         } else{
             print("Something went wrong")
         }
@@ -100,7 +116,6 @@ class InformationStartController: UIViewController, UIImagePickerControllerDeleg
     }
     
     private func gotoHome(){
-        self.dismiss(animated: true, completion: nil)
         MyTabBarControllerViewController.startPresent(uiViewController: self)
     }
 }

@@ -12,7 +12,7 @@ class MyTabBarControllerViewController: UITabBarController {
     
     static func startPresent(uiViewController:UIViewController) {
         if let presentController = uiViewController.storyboard?.instantiateViewController(withIdentifier: "tabbarscreen") as? MyTabBarControllerViewController {
-            uiViewController.present(presentController, animated: true, completion: nil)
+            uiViewController.show(presentController, sender: nil)
         }
     }
     

@@ -22,6 +22,12 @@ class MyUserDefault{
         case Email = "Email"
         case Password = "Password"
         case UserId = "UserId"
+        case BoB = "DoB"
+        case Phone = "Phone"
+        case Avatar = "Avatar"
+        case Wallpaper = "Wallpaper"
+        case FullName = "FullName"
+        case Address = "Address"
     }
     
     init() {
