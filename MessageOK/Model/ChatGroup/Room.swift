@@ -11,14 +11,14 @@ import SwiftyJSON
 
 class Room:NSObject {
     enum Color:String {
-        case Blue = "Blue"
-        case Red = "Red"
-        case Yellow = "Yellow"
+        case Blue = "blue"
+        case Red = "red"
+        case Yellow = "yellow"
     }
     enum Sticker:String {
-        case Like = "Like"
-        case Heart = "Heart"
-        case Face = "Face"
+        case Like = "like"
+        case Heart = "heart"
+        case Face = "face"
     }
     
     var Id:String!
@@ -28,7 +28,7 @@ class Room:NSObject {
     var IsChatGroup:Bool!
     var LastContent:String?
     var PathAvatar:String?
-    var UserJoinRooms:[UserJoinRoom]?
+    var UserJoinRooms:[UserJoinRoom] = []
     
     convenience init?(jsonObject: Any?) {
         guard let jsonData = jsonObject else { return nil }
@@ -56,7 +56,7 @@ class Room:NSObject {
         let arr = json["UserJoinRooms"].array
         for item in arr! {
             let tmp = UserJoinRoom(json: item)
-            self.UserJoinRooms?.append(tmp!)
+            self.UserJoinRooms.append(tmp!)
         }
     }
 }

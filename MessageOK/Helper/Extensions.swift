@@ -8,6 +8,9 @@
 
 import Foundation
 import UIKit
+import Firebase
+import RxSwift
+import RxCocoa
 
 extension UITextField{
     func setIcon(_ image: UIImage) {
@@ -32,5 +35,42 @@ extension String {
         let regularExpressionForPhone = "^\\d{3}-\\d{3}-\\d{4}$"
         let testPhone = NSPredicate(format:"SELF MATCHES %@", regularExpressionForPhone)
         return testPhone.evaluate(with: self)
+    }
+}
+
+extension UIViewController {
+    func setOnline() -> BehaviorRelay<Bool> {
+        let mystatus = BehaviorRelay<Bool>(value: false)
+        let idUser = MyUserDefault.instance.getObject(key: .UserId) as? String ?? ""
+        if idUser != "" {
+            _ = Database.database().reference().child("ONLINE").child(idUser).observe(.childChanged) { snap in
+                let value = snap.value as? NSDictionary
+                let status = value?["Status"] as? Int ?? 0
+                if ((Int(NSDate().timeIntervalSince1970) - status) < 300000) {
+                    mystatus.accept(true)
+                } else {
+                    mystatus.accept(false)
+                }
+            }
+        }
+        return mystatus
+    }
+}
+
+extension UICollectionView {
+    func myScrollToLast() {
+        guard numberOfSections > 0 else {
+            return
+        }
+        
+        let lastSection = numberOfSections - 1
+        
+        guard numberOfItems(inSection: lastSection) > 0 else {
+            return
+        }
+        
+        let lastItemIndexPath = IndexPath(item: numberOfItems(inSection: lastSection) - 1,
+                                          section: lastSection)
+        scrollToItem(at: lastItemIndexPath, at: .bottom, animated: true)
     }
 }

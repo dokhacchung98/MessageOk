@@ -1,16 +1,16 @@
 //
-//  InformationStartController.swift
+//  UpdateInformationController.swift
 //  MessageOK
 //
-//  Created by Trung on 11/3/19.
+//  Created by Trung on 12/9/19.
 //  Copyright © 2019 Trung. All rights reserved.
 //
 
 import UIKit
-import RxSwift
 import RxCocoa
+import RxSwift
 
-class InformationStartController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class UpdateInformationController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtBirth: UITextField!
     @IBOutlet weak var txtPhone: UITextField!
@@ -23,72 +23,61 @@ class InformationStartController: UIViewController, UIImagePickerControllerDeleg
     var pickAvatar = false
     var pickWallPaper = false
     
-    static func startPresent(uiViewController:UIViewController) {
-        if let presentController = uiViewController.storyboard?.instantiateViewController(withIdentifier: "updateInformationStart") as? InformationStartController {
-            uiViewController.show(presentController, sender: nil)
-        }
-    }
-    
     private let alertChooseDate = AlertChooseDateService()
     
     private let pickerImage = UIImagePickerController()
     
-    private var informationViewModel : InformationStartViewModel!
+    var viewModel: UpdateInformationViewModel!
     private var disposeBag = DisposeBag()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewBoundImage.makeRounded(width: 4, color: UIColor(rgb: 0xeaeaea).cgColor)
         self.viewBoundTop.layer.cornerRadius = 10
         self.btnUpdate.layer.cornerRadius = 5
-        
-        setupViewModel()
+
+        self.setupViewModel()
     }
     
     private func setupViewModel(){
-        self.informationViewModel = InformationStartViewModel(imageView: self.imgThumbnail,
-        imageWallView: self.imgWallPaper,
-        buttonUpdate: self.btnUpdate.rx.tap.asObservable())
+        self.viewModel = UpdateInformationViewModel(imageView: self.imgThumbnail, imageWallView: self.imgWallPaper, buttonUpdate: self.btnUpdate.rx.tap.asObservable())
         
-        _ = self.informationViewModel.isValid.bind{ valid in
+        _ = self.viewModel.isValid.bind{ valid in
             self.btnUpdate.alpha = valid ? 1 : 0.5
             self.btnUpdate.isEnabled = valid
         }
         
-        _ = self.informationViewModel.isRequest.bind{ isRequest in
+        _ = self.viewModel.isRequest.bind{ isRequest in
             self.btnUpdate.setTitle(isRequest ? "Please Wait..." : "Update", for: .normal)
         }
         
-        _ = self.txtName.rx.text.map{ $0 ?? ""}.bind(to: self.informationViewModel.name)
-        _ = self.txtPhone.rx.text.map{ $0 ?? ""}.bind(to: self.informationViewModel.phone)
-        _ = self.txtAddress.rx.text.map{ $0 ?? ""}.bind(to: self.informationViewModel.address)
-        _ = self.informationViewModel.birth.map{ date in
-                let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-                let myString = formatter.string(from: date)
-                let yourDate = formatter.date(from: myString)
-                formatter.dateFormat = "dd-MMM-yyyy"
-                let myStringafd = formatter.string(from: yourDate!)
-                return myStringafd
+        _ = self.viewModel.address.bind(to: self.txtAddress.rx.text)
+        _ = self.viewModel.name.bind(to: self.txtName.rx.text)
+        _ = self.viewModel.phone.bind(to: self.txtPhone.rx.text)
+        
+        _ = self.txtName.rx.text.map{ $0 ?? ""}.bind(to: self.viewModel.name)
+        _ = self.txtPhone.rx.text.map{ $0 ?? ""}.bind(to: self.viewModel.phone)
+        _ = self.txtAddress.rx.text.map{ $0 ?? ""}.bind(to: self.viewModel.address)
+        _ = self.viewModel.birth.map{ date in
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let myString = formatter.string(from: date)
+            let yourDate = formatter.date(from: myString)
+            formatter.dateFormat = "dd-MMM-yyyy"
+            let myStringafd = formatter.string(from: yourDate!)
+            return myStringafd
             }.bind(to: self.txtBirth.rx.text)
         
-        _ = self.informationViewModel.isUpdateSuccess.asObservable().bind{ isSuccess in
+        _ = self.viewModel.isUpdateSuccess.asObservable().bind{ isSuccess in
             if isSuccess {
-                let ref = MyUserDefault.instance
-                ref.saveObject(value: self.informationViewModel.pathAva, key: .Avatar)
-                ref.saveObject(value: self.informationViewModel.pathWall, key: .Wallpaper)
-                ref.saveObject(value: self.informationViewModel.name.value, key: .FullName)
-                ref.saveObject(value: self.informationViewModel.phone.value, key: .Phone)
-                ref.saveObject(value: self.informationViewModel.address.value, key: .Address)
-                ref.saveObject(value: self.informationViewModel.birth.value, key: .BoB)
                 self.gotoHome()
             }
         }
-   }
+    }
     
     @IBAction func chooseDate(_ sender: Any) {
         let alertVC = alertChooseDate.alert(){ date in
-            self.informationViewModel.birth.accept(date)
+            self.viewModel.birth.accept(date)
         }
         present(alertVC, animated: true, completion: nil)
     }
@@ -111,8 +100,10 @@ class InformationStartController: UIViewController, UIImagePickerControllerDeleg
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             if( pickAvatar){
                 imgThumbnail.image = image
+                self.viewModel.changeAvatar = true
             } else {
                 imgWallPaper.image = image
+                self.viewModel.changeWall = true
             }
             pickAvatar = false
             pickWallPaper = false
@@ -123,6 +114,10 @@ class InformationStartController: UIViewController, UIImagePickerControllerDeleg
     }
     
     private func gotoHome(){
-        MyTabBarControllerViewController.startPresent(uiViewController: self)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func exitScreen(_ sender: Any) {
+        self.gotoHome()
     }
 }

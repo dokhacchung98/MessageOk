@@ -112,7 +112,6 @@ class LoginViewModel{
         APIManager.requestData(url: "token", isLogin: false, method: .post, parameters: loginModel.toJson(), completion: { result in
             switch result {
                 case .success(_ , let body) :
-                    print("Vale token: \(body!["access_token"])")
                     self.myUserDefault.saveObject(value: body!["access_token"].rawValue, key: .Token)
                     self.myUserDefault.editObject(value: body!["token_type"].rawValue, key: .TokenType)
                     self.myUserDefault.saveObject(value: body!["userName"].rawValue, key: .UserName)
@@ -134,7 +133,6 @@ class LoginViewModel{
                 let idUserRequest = body!["Id"].rawValue as! String
                 let fullName:String? = body!["FullName"].rawValue as? String ?? ""
                 self.myUserDefault.saveObject(value: idUserRequest, key: .UserId)
-                
                 if fullName != "" {
                     self.myUserDefault.saveObject(value: body!["Email"].rawValue, key: .Email)
                     self.myUserDefault.saveObject(value: body!["Avatar"].rawValue, key: .Avatar)

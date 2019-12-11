@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		45FC6BF870CCE70916807970 /* Pods_MessageOK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB79571AE3B388B11F4B945 /* Pods_MessageOK.framework */; };
+		8709CB8123981C920082ABF6 /* UserChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8709CB8023981C920082ABF6 /* UserChatCell.xib */; };
+		8709CB85239825F70082ABF6 /* UserChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8709CB84239825F70082ABF6 /* UserChatCell.swift */; };
 		871864002396798800615171 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871863FF2396798800615171 /* ChatViewModel.swift */; };
 		871864022396799D00615171 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871864012396799D00615171 /* ChatController.swift */; };
 		8723B23C237DAA7A0022933D /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8723B23B237DAA7A0022933D /* UserTableViewCell.swift */; };
@@ -27,11 +29,15 @@
 		8748EF89235C76300001D89F /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8748EF88235C76300001D89F /* LoginController.swift */; };
 		876777422397DB7F00B5BCE8 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876777412397DB7F00B5BCE8 /* MessageModel.swift */; };
 		87753684237D4B6600492AEA /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87753683237D4B6600492AEA /* UserCell.xib */; };
+		8778F746239BB3D500E21BA9 /* FriendChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8778F745239BB3D500E21BA9 /* FriendChatCell.xib */; };
+		8778F748239BB45900E21BA9 /* FriendChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8778F747239BB45900E21BA9 /* FriendChatCell.swift */; };
 		877D24ED236F2027006FB3E3 /* MyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877D24EC236F2027006FB3E3 /* MyExtensions.swift */; };
-		877D24EF236F32F4006FB3E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 877D24EE236F32F4006FB3E3 /* GoogleService-Info.plist */; };
 		878E253B237A91A600D50CD3 /* ChangePassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878E253A237A91A600D50CD3 /* ChangePassController.swift */; };
 		878E253D237A91AF00D50CD3 /* ChangePass.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 878E253C237A91AF00D50CD3 /* ChangePass.storyboard */; };
 		878E253F237A999000D50CD3 /* ChangePassService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878E253E237A999000D50CD3 /* ChangePassService.swift */; };
+		879ABA64239FEEC30087F1BB /* ShowImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879ABA63239FEEC30087F1BB /* ShowImageController.swift */; };
+		879ABA66239FF1500087F1BB /* ShowImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879ABA65239FF1500087F1BB /* ShowImageService.swift */; };
+		879ABA68239FF58B0087F1BB /* ShowImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 879ABA67239FF58B0087F1BB /* ShowImage.storyboard */; };
 		87A6FB7B2382C2A800061977 /* FriendSentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A6FB7A2382C2A800061977 /* FriendSentController.swift */; };
 		87A6FB7D2382C2B400061977 /* FriendSentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A6FB7C2382C2B400061977 /* FriendSentViewModel.swift */; };
 		87A6FB812382C3EC00061977 /* FriendSentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A6FB7F2382C3EC00061977 /* FriendSentCell.swift */; };
@@ -43,6 +49,19 @@
 		87AD17582379722B000FD5AC /* RequestFriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AD17572379722B000FD5AC /* RequestFriendViewModel.swift */; };
 		87C0E4902365EE7900B22A78 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C0E48F2365EE7900B22A78 /* LoginViewModel.swift */; };
 		87C0E4922365F0D500B22A78 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C0E4912365F0D500B22A78 /* Network.swift */; };
+		87C86C9E23A0E35900F7FE8E /* ChatImageUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87C86C9D23A0E35900F7FE8E /* ChatImageUserCell.xib */; };
+		87C86CA023A0E3DC00F7FE8E /* ChatImageUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C86C9F23A0E3DC00F7FE8E /* ChatImageUserCell.swift */; };
+		87C86CA223A0E47400F7FE8E /* ChatImageFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C86CA123A0E47400F7FE8E /* ChatImageFriendCell.swift */; };
+		87C86CA523A0E48D00F7FE8E /* ChatImageFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87C86CA423A0E48D00F7FE8E /* ChatImageFriendCell.xib */; };
+		87C86CA823A0FDD900F7FE8E /* ChooseEmoji.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C86CA723A0FDD900F7FE8E /* ChooseEmoji.storyboard */; };
+		87C86CAA23A0FDE800F7FE8E /* ChooseEmojiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C86CA923A0FDE800F7FE8E /* ChooseEmojiController.swift */; };
+		87C86CAC23A0FF5800F7FE8E /* ChooseEmojiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C86CAB23A0FF5800F7FE8E /* ChooseEmojiCell.swift */; };
+		87C86CAE23A1017C00F7FE8E /* ChooseEmojiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C86CAD23A1017C00F7FE8E /* ChooseEmojiViewModel.swift */; };
+		87C86CB023A102D900F7FE8E /* TypeEmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C86CAF23A102D900F7FE8E /* TypeEmoji.swift */; };
+		87C86CB223A1031400F7FE8E /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C86CB123A1031400F7FE8E /* Emoji.swift */; };
+		87C86CB423A10A2100F7FE8E /* ShowEmojiAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C86CB323A10A2100F7FE8E /* ShowEmojiAlert.swift */; };
+		87C86CB623A111E700F7FE8E /* ChooseEmojiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87C86CB523A111E700F7FE8E /* ChooseEmojiCell.xib */; };
+		87C86CC023A14DAD00F7FE8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87C86CBF23A14DAD00F7FE8E /* GoogleService-Info.plist */; };
 		87D54770236EB8BB0088AC83 /* InformationStartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D5476F236EB8BB0088AC83 /* InformationStartController.swift */; };
 		87D54772236EB8EE0088AC83 /* InformationStartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D54771236EB8EE0088AC83 /* InformationStartViewModel.swift */; };
 		87D54774236EB9410088AC83 /* InformationUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D54773236EB9410088AC83 /* InformationUser.swift */; };
@@ -52,6 +71,8 @@
 		87DDFD1C2362D0F600B3C2FB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DDFD1B2362D0F600B3C2FB /* Extensions.swift */; };
 		87DDFD1E2362DA4400B3C2FB /* IconTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DDFD1D2362DA4400B3C2FB /* IconTextField.swift */; };
 		87DDFD2B2362DE3C00B3C2FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DDFD2A2362DE3C00B3C2FB /* AppDelegate.swift */; };
+		87ED3269239EA9C500F5A0FF /* UpdateInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ED3268239EA9C500F5A0FF /* UpdateInformationController.swift */; };
+		87ED326B239EAAA300F5A0FF /* UpdateInformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ED326A239EAAA300F5A0FF /* UpdateInformationViewModel.swift */; };
 		87F3D5342371BF1B00064285 /* ChatFriendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F3D5332371BF1B00064285 /* ChatFriendController.swift */; };
 		87F3D5362371BF2A00064285 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F3D5352371BF2A00064285 /* SettingController.swift */; };
 		87F3D5382371BF3700064285 /* RequestFriendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F3D5372371BF3700064285 /* RequestFriendController.swift */; };
@@ -62,6 +83,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8709CB8023981C920082ABF6 /* UserChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserChatCell.xib; sourceTree = "<group>"; };
+		8709CB84239825F70082ABF6 /* UserChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChatCell.swift; sourceTree = "<group>"; };
 		871863FF2396798800615171 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		871864012396799D00615171 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
 		8723B23B237DAA7A0022933D /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
@@ -83,11 +106,15 @@
 		8748EF88235C76300001D89F /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		876777412397DB7F00B5BCE8 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		87753683237D4B6600492AEA /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		8778F745239BB3D500E21BA9 /* FriendChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendChatCell.xib; sourceTree = "<group>"; };
+		8778F747239BB45900E21BA9 /* FriendChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendChatCell.swift; sourceTree = "<group>"; };
 		877D24EC236F2027006FB3E3 /* MyExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExtensions.swift; sourceTree = "<group>"; };
-		877D24EE236F32F4006FB3E3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		878E253A237A91A600D50CD3 /* ChangePassController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassController.swift; sourceTree = "<group>"; };
 		878E253C237A91AF00D50CD3 /* ChangePass.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangePass.storyboard; sourceTree = "<group>"; };
 		878E253E237A999000D50CD3 /* ChangePassService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassService.swift; sourceTree = "<group>"; };
+		879ABA63239FEEC30087F1BB /* ShowImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImageController.swift; sourceTree = "<group>"; };
+		879ABA65239FF1500087F1BB /* ShowImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImageService.swift; sourceTree = "<group>"; };
+		879ABA67239FF58B0087F1BB /* ShowImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShowImage.storyboard; sourceTree = "<group>"; };
 		87A6FB7A2382C2A800061977 /* FriendSentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendSentController.swift; sourceTree = "<group>"; };
 		87A6FB7C2382C2B400061977 /* FriendSentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendSentViewModel.swift; sourceTree = "<group>"; };
 		87A6FB7F2382C3EC00061977 /* FriendSentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendSentCell.swift; sourceTree = "<group>"; };
@@ -99,6 +126,19 @@
 		87AD17572379722B000FD5AC /* RequestFriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFriendViewModel.swift; sourceTree = "<group>"; };
 		87C0E48F2365EE7900B22A78 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		87C0E4912365F0D500B22A78 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		87C86C9D23A0E35900F7FE8E /* ChatImageUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatImageUserCell.xib; sourceTree = "<group>"; };
+		87C86C9F23A0E3DC00F7FE8E /* ChatImageUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatImageUserCell.swift; sourceTree = "<group>"; };
+		87C86CA123A0E47400F7FE8E /* ChatImageFriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatImageFriendCell.swift; sourceTree = "<group>"; };
+		87C86CA423A0E48D00F7FE8E /* ChatImageFriendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatImageFriendCell.xib; sourceTree = "<group>"; };
+		87C86CA723A0FDD900F7FE8E /* ChooseEmoji.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChooseEmoji.storyboard; sourceTree = "<group>"; };
+		87C86CA923A0FDE800F7FE8E /* ChooseEmojiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEmojiController.swift; sourceTree = "<group>"; };
+		87C86CAB23A0FF5800F7FE8E /* ChooseEmojiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEmojiCell.swift; sourceTree = "<group>"; };
+		87C86CAD23A1017C00F7FE8E /* ChooseEmojiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEmojiViewModel.swift; sourceTree = "<group>"; };
+		87C86CAF23A102D900F7FE8E /* TypeEmoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeEmoji.swift; sourceTree = "<group>"; };
+		87C86CB123A1031400F7FE8E /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
+		87C86CB323A10A2100F7FE8E /* ShowEmojiAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEmojiAlert.swift; sourceTree = "<group>"; };
+		87C86CB523A111E700F7FE8E /* ChooseEmojiCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseEmojiCell.xib; sourceTree = "<group>"; };
+		87C86CBF23A14DAD00F7FE8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		87D5476F236EB8BB0088AC83 /* InformationStartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationStartController.swift; sourceTree = "<group>"; };
 		87D54771236EB8EE0088AC83 /* InformationStartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationStartViewModel.swift; sourceTree = "<group>"; };
 		87D54773236EB9410088AC83 /* InformationUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationUser.swift; sourceTree = "<group>"; };
@@ -108,6 +148,8 @@
 		87DDFD1B2362D0F600B3C2FB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		87DDFD1D2362DA4400B3C2FB /* IconTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextField.swift; sourceTree = "<group>"; };
 		87DDFD2A2362DE3C00B3C2FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		87ED3268239EA9C500F5A0FF /* UpdateInformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateInformationController.swift; sourceTree = "<group>"; };
+		87ED326A239EAAA300F5A0FF /* UpdateInformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateInformationViewModel.swift; sourceTree = "<group>"; };
 		87F3D5332371BF1B00064285 /* ChatFriendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFriendController.swift; sourceTree = "<group>"; };
 		87F3D5352371BF2A00064285 /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		87F3D5372371BF3700064285 /* RequestFriendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFriendController.swift; sourceTree = "<group>"; };
@@ -145,6 +187,14 @@
 			isa = PBXGroup;
 			children = (
 				871864012396799D00615171 /* ChatController.swift */,
+				8709CB8023981C920082ABF6 /* UserChatCell.xib */,
+				8709CB84239825F70082ABF6 /* UserChatCell.swift */,
+				8778F745239BB3D500E21BA9 /* FriendChatCell.xib */,
+				8778F747239BB45900E21BA9 /* FriendChatCell.swift */,
+				87C86C9D23A0E35900F7FE8E /* ChatImageUserCell.xib */,
+				87C86C9F23A0E3DC00F7FE8E /* ChatImageUserCell.swift */,
+				87C86CA423A0E48D00F7FE8E /* ChatImageFriendCell.xib */,
+				87C86CA123A0E47400F7FE8E /* ChatImageFriendCell.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -229,6 +279,7 @@
 		8748EF77235C637E0001D89F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				87ED3266239EA90C00F5A0FF /* UpdateInformation */,
 				871863FD2396796F00615171 /* Chat */,
 				87F3D52B2371BE7A00064285 /* ChatFriend */,
 				87F3D52C2371BEC200064285 /* ChatGroup */,
@@ -246,6 +297,7 @@
 		8748EF78235C638C0001D89F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				87ED3267239EA91B00F5A0FF /* UpdateInformation */,
 				871863FE2396797B00615171 /* Chat */,
 				87F3D5322371BF0600064285 /* ChatFriend */,
 				87F3D5312371BEFF00064285 /* ChatGroup */,
@@ -283,7 +335,7 @@
 			children = (
 				8748EF69235C47230001D89F /* Main.storyboard */,
 				8748EF6E235C47240001D89F /* LaunchScreen.storyboard */,
-				877D24EE236F32F4006FB3E3 /* GoogleService-Info.plist */,
+				87C86CBF23A14DAD00F7FE8E /* GoogleService-Info.plist */,
 				8748EF71235C47240001D89F /* Info.plist */,
 				8748EF6C235C47240001D89F /* Assets.xcassets */,
 			);
@@ -322,6 +374,8 @@
 			isa = PBXGroup;
 			children = (
 				876777412397DB7F00B5BCE8 /* MessageModel.swift */,
+				87C86CAF23A102D900F7FE8E /* TypeEmoji.swift */,
+				87C86CB123A1031400F7FE8E /* Emoji.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -333,6 +387,15 @@
 				878E253C237A91AF00D50CD3 /* ChangePass.storyboard */,
 			);
 			path = ChangePass;
+			sourceTree = "<group>";
+		};
+		879ABA60239FBEA90087F1BB /* ShowImage */ = {
+			isa = PBXGroup;
+			children = (
+				879ABA63239FEEC30087F1BB /* ShowImageController.swift */,
+				879ABA67239FF58B0087F1BB /* ShowImage.storyboard */,
+			);
+			path = ShowImage;
 			sourceTree = "<group>";
 		};
 		87A6FB792382C28C00061977 /* FriendSent */ = {
@@ -366,6 +429,8 @@
 			children = (
 				87D5477D236EC5A10088AC83 /* AlertChooseDateService.swift */,
 				878E253E237A999000D50CD3 /* ChangePassService.swift */,
+				879ABA65239FF1500087F1BB /* ShowImageService.swift */,
+				87C86CB323A10A2100F7FE8E /* ShowEmojiAlert.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -376,6 +441,18 @@
 				87C0E48F2365EE7900B22A78 /* LoginViewModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		87C86CA623A0FDB900F7FE8E /* ChooseEmoji */ = {
+			isa = PBXGroup;
+			children = (
+				87C86CA723A0FDD900F7FE8E /* ChooseEmoji.storyboard */,
+				87C86CA923A0FDE800F7FE8E /* ChooseEmojiController.swift */,
+				87C86CAB23A0FF5800F7FE8E /* ChooseEmojiCell.swift */,
+				87C86CAD23A1017C00F7FE8E /* ChooseEmojiViewModel.swift */,
+				87C86CB523A111E700F7FE8E /* ChooseEmojiCell.xib */,
+			);
+			path = ChooseEmoji;
 			sourceTree = "<group>";
 		};
 		87D5476C236EB86A0088AC83 /* InformationStart */ = {
@@ -405,8 +482,10 @@
 		87D54776236EC1670088AC83 /* OrtherFunction */ = {
 			isa = PBXGroup;
 			children = (
-				878E2539237A918C00D50CD3 /* ChangePass */,
 				87D54777236EC17E0088AC83 /* ChooseDate */,
+				87C86CA623A0FDB900F7FE8E /* ChooseEmoji */,
+				879ABA60239FBEA90087F1BB /* ShowImage */,
+				878E2539237A918C00D50CD3 /* ChangePass */,
 			);
 			path = OrtherFunction;
 			sourceTree = "<group>";
@@ -418,6 +497,22 @@
 				87D5477A236EC2090088AC83 /* ChooseDateController.swift */,
 			);
 			path = ChooseDate;
+			sourceTree = "<group>";
+		};
+		87ED3266239EA90C00F5A0FF /* UpdateInformation */ = {
+			isa = PBXGroup;
+			children = (
+				87ED3268239EA9C500F5A0FF /* UpdateInformationController.swift */,
+			);
+			path = UpdateInformation;
+			sourceTree = "<group>";
+		};
+		87ED3267239EA91B00F5A0FF /* UpdateInformation */ = {
+			isa = PBXGroup;
+			children = (
+				87ED326A239EAAA300F5A0FF /* UpdateInformationViewModel.swift */,
+			);
+			path = UpdateInformation;
 			sourceTree = "<group>";
 		};
 		87F3D52B2371BE7A00064285 /* ChatFriend */ = {
@@ -575,12 +670,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				8748EF70235C47240001D89F /* LaunchScreen.storyboard in Resources */,
+				87C86C9E23A0E35900F7FE8E /* ChatImageUserCell.xib in Resources */,
 				8748EF6D235C47240001D89F /* Assets.xcassets in Resources */,
-				877D24EF236F32F4006FB3E3 /* GoogleService-Info.plist in Resources */,
+				8778F746239BB3D500E21BA9 /* FriendChatCell.xib in Resources */,
 				8748EF6B235C47230001D89F /* Main.storyboard in Resources */,
+				87C86CA823A0FDD900F7FE8E /* ChooseEmoji.storyboard in Resources */,
+				8709CB8123981C920082ABF6 /* UserChatCell.xib in Resources */,
 				87A71E1E2383CC74005B181F /* ChatFriend.xib in Resources */,
+				87C86CB623A111E700F7FE8E /* ChooseEmojiCell.xib in Resources */,
 				87D54779236EC19B0088AC83 /* ChooseDate.storyboard in Resources */,
+				87C86CA523A0E48D00F7FE8E /* ChatImageFriendCell.xib in Resources */,
 				87A6FB822382C3EC00061977 /* FriendSentCell.xib in Resources */,
+				87C86CC023A14DAD00F7FE8E /* GoogleService-Info.plist in Resources */,
+				879ABA68239FF58B0087F1BB /* ShowImage.storyboard in Resources */,
 				878E253D237A91AF00D50CD3 /* ChangePass.storyboard in Resources */,
 				87753684237D4B6600492AEA /* UserCell.xib in Resources */,
 			);
@@ -635,28 +737,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87C86CB223A1031400F7FE8E /* Emoji.swift in Sources */,
 				87F3D5362371BF2A00064285 /* SettingController.swift in Sources */,
 				8723B242237DAD3F0022933D /* UserListViewModel.swift in Sources */,
 				874320AE2372C23200D62559 /* SwipViewController.swift in Sources */,
 				87F3D53A2371BF4E00064285 /* ChatGroupController.swift in Sources */,
 				87D5477E236EC5A10088AC83 /* AlertChooseDateService.swift in Sources */,
+				87C86CAC23A0FF5800F7FE8E /* ChooseEmojiCell.swift in Sources */,
 				87A6FB812382C3EC00061977 /* FriendSentCell.swift in Sources */,
+				879ABA66239FF1500087F1BB /* ShowImageService.swift in Sources */,
 				87D5477B236EC2090088AC83 /* ChooseDateController.swift in Sources */,
 				87A6FB7D2382C2B400061977 /* FriendSentViewModel.swift in Sources */,
+				87C86CA223A0E47400F7FE8E /* ChatImageFriendCell.swift in Sources */,
 				8733879723790D5E00081BD6 /* User.swift in Sources */,
+				87C86CAA23A0FDE800F7FE8E /* ChooseEmojiController.swift in Sources */,
 				87A6FB852382C8B200061977 /* FriendRequest.swift in Sources */,
 				878E253F237A999000D50CD3 /* ChangePassService.swift in Sources */,
 				8733879523790C8900081BD6 /* UserJoinRoom.swift in Sources */,
 				87F513C9236BB6B9009A8857 /* MyUserDefault.swift in Sources */,
 				87DDFD2B2362DE3C00B3C2FB /* AppDelegate.swift in Sources */,
+				8709CB85239825F70082ABF6 /* UserChatCell.swift in Sources */,
+				87C86CB423A10A2100F7FE8E /* ShowEmojiAlert.swift in Sources */,
+				8778F748239BB45900E21BA9 /* FriendChatCell.swift in Sources */,
 				874320AC2372B98000D62559 /* MyTabBarControllerViewController.swift in Sources */,
 				87D54770236EB8BB0088AC83 /* InformationStartController.swift in Sources */,
 				87F3D5342371BF1B00064285 /* ChatFriendController.swift in Sources */,
 				8748EF89235C76300001D89F /* LoginController.swift in Sources */,
+				879ABA64239FEEC30087F1BB /* ShowImageController.swift in Sources */,
 				871864002396798800615171 /* ChatViewModel.swift in Sources */,
+				87C86CB023A102D900F7FE8E /* TypeEmoji.swift in Sources */,
 				8723B23C237DAA7A0022933D /* UserTableViewCell.swift in Sources */,
 				87D54772236EB8EE0088AC83 /* InformationStartViewModel.swift in Sources */,
 				87D54774236EB9410088AC83 /* InformationUser.swift in Sources */,
+				87ED326B239EAAA300F5A0FF /* UpdateInformationViewModel.swift in Sources */,
 				87C0E4902365EE7900B22A78 /* LoginViewModel.swift in Sources */,
 				87FD4D4823707952001E7A53 /* SplashScreenController.swift in Sources */,
 				8733878E2378FC1200081BD6 /* SettingViewModel.swift in Sources */,
@@ -667,8 +780,10 @@
 				87C0E4922365F0D500B22A78 /* Network.swift in Sources */,
 				873387902379091700081BD6 /* ChatGroupViewModel.swift in Sources */,
 				87A71E192383CC11005B181F /* ChatFriendViewModel.swift in Sources */,
+				87C86CAE23A1017C00F7FE8E /* ChooseEmojiViewModel.swift in Sources */,
 				87FD4D4B23707C20001E7A53 /* SplashScreenViewModel.swift in Sources */,
 				8723B23F237DAB9F0022933D /* UserListTableViewController.swift in Sources */,
+				87ED3269239EA9C500F5A0FF /* UpdateInformationController.swift in Sources */,
 				87AD17582379722B000FD5AC /* RequestFriendViewModel.swift in Sources */,
 				871864022396799D00615171 /* ChatController.swift in Sources */,
 				87A71E1C2383CC67005B181F /* ChatFriendCell.swift in Sources */,
@@ -676,6 +791,7 @@
 				877D24ED236F2027006FB3E3 /* MyExtensions.swift in Sources */,
 				878E253B237A91A600D50CD3 /* ChangePassController.swift in Sources */,
 				87DDFD1C2362D0F600B3C2FB /* Extensions.swift in Sources */,
+				87C86CA023A0E3DC00F7FE8E /* ChatImageUserCell.swift in Sources */,
 				873387922379095D00081BD6 /* Room.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

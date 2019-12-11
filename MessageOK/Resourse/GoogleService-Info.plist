@@ -3,34 +3,34 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>325857877129-iaamgp7ea51o84g7tlnq6pt3mge6mo5q.apps.googleusercontent.com</string>
+	<string>969928741765-1e822tdl4cr6dgrhlna18vs55msi08j0.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.325857877129-iaamgp7ea51o84g7tlnq6pt3mge6mo5q</string>
+	<string>com.googleusercontent.apps.969928741765-1e822tdl4cr6dgrhlna18vs55msi08j0</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDvU6uU69u-bBytquZFYRXGdBehZ7ufU00</string>
+	<string>AIzaSyBv5Don4zJc8tQ2O3nX8J-rK-JqbT_apvM</string>
 	<key>GCM_SENDER_ID</key>
-	<string>325857877129</string>
+	<string>969928741765</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.khacchung.demo.MessageOK</string>
 	<key>PROJECT_ID</key>
-	<string>luu-data</string>
+	<string>ioshk-d32a0</string>
 	<key>STORAGE_BUCKET</key>
-	<string>luu-data.appspot.com</string>
+	<string>ioshk-d32a0.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:325857877129:ios:e815fc12ca27755fd93a58</string>
+	<string>1:969928741765:ios:ff9d5251fe3c63ba232aec</string>
 	<key>DATABASE_URL</key>
-	<string>https://luu-data.firebaseio.com</string>
+	<string>https://ioshk-d32a0.firebaseio.com</string>
 </dict>
 </plist>

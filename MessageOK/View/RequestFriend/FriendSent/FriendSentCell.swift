@@ -27,6 +27,7 @@ class FriendSentCell: UICollectionViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.imgAvatar.makeRounded(width: 2, color: UIColor(rgb: 0xeaeaea).cgColor)
         // Initialization code
     }
     

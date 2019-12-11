@@ -16,6 +16,7 @@ class ChatFriendCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.imgAvatar.makeRounded(width: 2, color: UIColor(rgb: 0xeaeaea).cgColor)
         // Initialization code
     }
 
@@ -26,6 +27,6 @@ class ChatFriendCell: UITableViewCell {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 88.0;//Choose your custom row height
+        return 88.0;
     }
 }

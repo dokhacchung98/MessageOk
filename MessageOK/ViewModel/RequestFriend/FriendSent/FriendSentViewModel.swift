@@ -9,13 +9,14 @@
 import Foundation
 import RxCocoa
 import RxSwift
+import Firebase
 
 class FriendSentViewModel {
     var listFR = BehaviorRelay<[FriendRequest]>(value: [])
 
     
     init() {
-        self.getFriendRequest()
+        self.observerFriendRequest()
     }
     
     func getFriendRequest() {
@@ -34,6 +35,15 @@ class FriendSentViewModel {
                 print("Get Friend Request Error : \(err)")
                 break
             }
+        }
+    }
+    
+    func observerFriendRequest() {
+        let ref = Database.database().reference().child("friend_request")
+        
+        ref.observe(.value) { _ in
+            print("Co nguoi gui")
+            self.getFriendRequest()
         }
     }
     

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u9n-Dt-TXd">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Choose Emoji Controller-->
+        <scene sceneID="gdL-Bz-Sz4">
+            <objects>
+                <viewController storyboardIdentifier="ChooseEmoji" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="u9n-Dt-TXd" customClass="ChooseEmojiController" customModule="MessageOK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W00-0b-9Kj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1c-KT-Sj4">
+                                <rect key="frame" x="20" y="239.5" width="374" height="417"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TuQ-tM-I6j">
+                                        <rect key="frame" x="8" y="60" width="358" height="349"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VgC-po-8tM">
+                                            <size key="itemSize" width="98" height="95"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVd-7V-kjS">
+                                        <rect key="frame" x="8" y="8" width="36" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="Sdm-0k-Jar"/>
+                                            <constraint firstAttribute="width" constant="36" id="ado-7Q-VCI"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="imgback"/>
+                                        <connections>
+                                            <action selector="backEmoji:" destination="u9n-Dt-TXd" eventType="touchUpInside" id="n3m-3F-E1w"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type Emoji" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDG-sR-Wfm">
+                                        <rect key="frame" x="145" y="15" width="84" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.97679919000000004" green="0.3493226223" blue="0.1016817314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="TuQ-tM-I6j" secondAttribute="bottom" constant="8" id="0ad-SR-a5Y"/>
+                                    <constraint firstItem="TuQ-tM-I6j" firstAttribute="leading" secondItem="C1c-KT-Sj4" secondAttribute="leading" constant="8" id="A2r-h4-tbH"/>
+                                    <constraint firstAttribute="trailing" secondItem="TuQ-tM-I6j" secondAttribute="trailing" constant="8" id="Ioq-yc-t4F"/>
+                                    <constraint firstItem="TuQ-tM-I6j" firstAttribute="top" secondItem="rDG-sR-Wfm" secondAttribute="bottom" constant="24" id="J3y-1e-qtz"/>
+                                    <constraint firstAttribute="height" constant="417" id="MT5-j5-CXr"/>
+                                    <constraint firstItem="IVd-7V-kjS" firstAttribute="leading" secondItem="C1c-KT-Sj4" secondAttribute="leading" constant="8" id="OtI-Er-kS9"/>
+                                    <constraint firstItem="IVd-7V-kjS" firstAttribute="top" secondItem="C1c-KT-Sj4" secondAttribute="top" constant="8" id="Wwl-bT-b3Y"/>
+                                    <constraint firstAttribute="width" constant="374" id="fA6-WO-qmO"/>
+                                    <constraint firstItem="rDG-sR-Wfm" firstAttribute="top" secondItem="C1c-KT-Sj4" secondAttribute="top" constant="15" id="gqr-O4-qRf"/>
+                                    <constraint firstItem="rDG-sR-Wfm" firstAttribute="centerX" secondItem="C1c-KT-Sj4" secondAttribute="centerX" id="u65-cF-qUO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.33743578764794518" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="C1c-KT-Sj4" firstAttribute="centerY" secondItem="W00-0b-9Kj" secondAttribute="centerY" id="c5f-J7-WxZ"/>
+                            <constraint firstItem="C1c-KT-Sj4" firstAttribute="centerX" secondItem="W00-0b-9Kj" secondAttribute="centerX" id="rVl-HE-zu5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fYd-fF-mss"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="TuQ-tM-I6j" id="bWF-M7-Ai7"/>
+                        <outlet property="txtEmoji" destination="rDG-sR-Wfm" id="n3x-CD-Flj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wyi-S7-b75" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-200.00000000000003" y="-244.41964285714283"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="imgback" width="36" height="36"/>
+    </resources>
+</document>

@@ -24,10 +24,13 @@ class ChatFriendController: SwipViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.chatFriendViewModel = ChatFriendViewModel()
 
         self.bindingTableView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.chatFriendViewModel.loadUserJoinRoom()
     }
     
     private func bindingTableView() {
@@ -53,16 +56,14 @@ class ChatFriendController: SwipViewController {
 
         self.myTV.rx.itemSelected.asObservable().subscribe(onNext: { (indexPath) in
             let currentUJR = self.chatFriendViewModel.listUserJoinRoom.value[indexPath.row]
-            print("Select item \(String(describing: currentUJR.Id))")
             self.performSegue(withIdentifier: "present_chat", sender: currentUJR)
         }).disposed(by: disposeBag)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("Go to prepare")
         if (segue.identifier == "present_chat") {
             let vc = segue.destination as! ChatController
-            vc.idFriend = (sender as! UserJoinRoom).Id!
+            vc.idFriend = (sender as! UserJoinRoom).RoomId!
         }
     }
 }

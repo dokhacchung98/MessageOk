@@ -31,7 +31,6 @@ class SettingController: SwipViewController {
         super.viewDidLoad()
         self.imgAvatar.makeRounded(width: 4, color: UIColor(rgb: 0xeaeaea).cgColor)
         self.imgWallpaper.layer.cornerRadius = 10
-        self.loadDataFromLocal()
         self.settingViewModel = SettingViewModel()
         
         _ = settingViewModel.isLogoutSuccess.asObservable().bind{ result in
@@ -67,6 +66,7 @@ class SettingController: SwipViewController {
             self.txtDoB.text = (dob as! String)
         }
         if let avatar = self.myUserDefault.getObject(key: .Avatar) {
+            print("Avatar: \(avatar as! String)")
             self.imgAvatar.loadImageFromUrl(urlString: avatar as! String)
         }
         if let wall = self.myUserDefault.getObject(key: .Wallpaper) {
@@ -75,8 +75,8 @@ class SettingController: SwipViewController {
         
     }
     
-    private func loadDataOnline(){
-        
+    override func viewDidAppear(_ animated: Bool) {
+        self.loadDataFromLocal()
     }
     
     @IBAction func logoutUser(_ sender: Any) {
@@ -91,12 +91,8 @@ class SettingController: SwipViewController {
     }
     
     @IBAction func showFormChange(_ sender: Any) {
-        let alertVC = self.changePassService.alert()
-        self.tabBarController!.present(alertVC, animated: true, completion: nil)
-//        present(alertVC, animated: true, completion: nil)
-    }
-
-    @IBAction func gotoChangeInformation(_ sender: Any) {
+        let alertVC = changePassService.alert()
+        present(alertVC, animated: true, completion: nil)
     }
     
     private func logout(){

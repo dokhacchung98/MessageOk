@@ -12,9 +12,11 @@ import RxCocoa
 import SwiftyJSON
 import Alamofire
 import FirebaseStorage
+import Firebase
 
 class APIManager {
     static var Base_Url = "http://khacchung98.somee.com/"
+    static var ROOM_NAME = "ROOM"
 //    static var Base_Url = "http://khacchung98-001-site1.itempurl.com/"
 
     typealias parameters = [String:Any]
@@ -41,7 +43,7 @@ class APIManager {
             let typeToken = MyUserDefault.instance.getObject(key: .TokenType) as! String
             let token = MyUserDefault.instance.getObject(key: .Token) as! String
             header = ["Content-Type": "application/x-www-form-urlencoded", "Authorization": "\(String(describing: typeToken)) \(String(describing: token))"]
-            print("Header: \(header)")
+//            print("Header: \(header)")
         }else{
             header = ["Content-Type": "application/x-www-form-urlencoded"]
         }
@@ -51,9 +53,9 @@ class APIManager {
                  .validate(contentType: ["application/json"])
                  .responseJSON { response in
                     let headersResponse = response.response?.allHeaderFields as? [String: String]
-                    print("header result: \(String(describing: headersResponse)))")
-                    print("respone result: \(String(describing: response.result.value))")
-                    print("error result: \(String(describing: response.result.error))")
+//                    print("header result: \(String(describing: headersResponse)))")
+//                    print("respone result: \(String(describing: response.result.value))")
+//                    print("error result: \(String(describing: response.result.error))")
                     let statusCode = (response.response?.statusCode)!
                     
                     switch statusCode{
@@ -86,5 +88,10 @@ class APIManager {
                 print("Upload image error : \(String(describing: err))")
             }
         }
+    }
+    
+    static func sendMessage(idRoom: String, message: MessageModel) {
+        let ref = Database.database().reference()
+        ref.child(ROOM_NAME).child(idRoom).childByAutoId().setValue(message.toJSON())
     }
 }

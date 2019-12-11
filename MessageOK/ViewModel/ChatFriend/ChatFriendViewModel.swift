@@ -22,7 +22,8 @@ class ChatFriendViewModel {
         self.loadUserJoinRoom()
     }
     
-    private func loadUserJoinRoom() {
+    func loadUserJoinRoom() {
+        print("load laod")
         var parameter: [String:Any] = [:]
         parameter["pageNumber"] = currentPage += 1
         parameter["pageSize"] = pageTotalSize += pageSize
